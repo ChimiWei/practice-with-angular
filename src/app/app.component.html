@@ -1,9 +1,12 @@
-<header>
-  <div>
-   <h2> Todolily </h2>
-   <hr>
-    <app-xyz></app-xyz>
+ <app-header></app-header>
 
-  </div>
-</header>
+<section>
+  <app-lista-tarefas periodo="Manhã" class="theme-manha" ></app-lista-tarefas>
+</section>
+<section>
+  <app-lista-tarefas periodo="Tarde" class="theme-tarde" ></app-lista-tarefas>
+</section>
+<section>
+  <app-lista-tarefas periodo="Noite" class="theme-noite" ></app-lista-tarefas>
+</section>
 <router-outlet></router-outlet>
