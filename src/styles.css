@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
-body {
+
+.normalMode {
     background-color: rgb(222, 197, 235);
+}
+
+.darkMode {
+    background-color: rgb(100, 91, 106);
 }

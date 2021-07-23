@@ -3,15 +3,15 @@ li {
 }
 
 :host-context(.theme-manha) #homework {
-    border: 2px solid #fbff05!important;
+    border: 2px solid #f9fc5e!important;
 }
 
 :host-context(.theme-tarde) #homework {
-    border: 2px solid #f7a121!important;
+    border: 2px solid #f8c16f!important;
 }
 
 :host-context(.theme-noite) #homework {
-    border: 2px solid #5a08ac!important;
+    border: 2px solid #b795d8!important;
 }
 
 

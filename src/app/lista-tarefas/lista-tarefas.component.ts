@@ -8,7 +8,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ListaTarefasComponent implements OnInit {
 
   @Input() periodo: string;
-  @Input() list: any;
+  
+
+  tarefas = [
+    { id: 1, prioridadeNivel: 1, tarefa: "Depositar no banco doc", periodo:"manha"},
+    { id: 2, prioridadeNivel: 2, tarefa: "Arrumar o quarto", periodo: "tarde" },
+    { id: 3, prioridadeNivel: 3, tarefa: "Brincar com Mio", periodo: "noite" }
+    
+    
+  ]
+ 
 
  
  
