@@ -1,0 +1,21 @@
+ .tarefa-1 {
+    border: 3px solid rgba(255, 2, 2, 0.816); 
+    padding: 18px; 
+    margin: 5px;
+}
+
+ .tarefa-2 {
+    border: 3px solid rgba(7, 179, 242, 0.755); 
+    padding: 11px; 
+    margin: 7px;
+}
+
+ .tarefa-3 {
+    border: 3px solid #5a08ac41; 
+    padding: 7px; 
+    margin: 8px;
+}
+
+li {
+    list-style: none;
+}
