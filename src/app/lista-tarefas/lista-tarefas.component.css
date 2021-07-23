@@ -1,17 +1,19 @@
-li {
-    list-style: none;
-}
+
 
 :host-context(.theme-manha) #homework {
-    border: 2px solid #f9fc5e!important;
+    border: 2px solid #cacc3d!important;
+    border-radius: 24px;
+    
 }
 
 :host-context(.theme-tarde) #homework {
     border: 2px solid #f8c16f!important;
+    border-radius: 24px;
 }
 
 :host-context(.theme-noite) #homework {
     border: 2px solid #b795d8!important;
+    border-radius: 24px;
 }
 
 

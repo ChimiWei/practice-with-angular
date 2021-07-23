@@ -1,3 +1,11 @@
-header {
+nav {
     background-color: rgba(116, 60, 228, 0.864);
+}
+
+.navbar-brand {
+    font-size: 1.65rem;
+}
+
+.nav-link:hover {
+    cursor: pointer;
 }

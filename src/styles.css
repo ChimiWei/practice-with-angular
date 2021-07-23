@@ -6,3 +6,6 @@
 .darkMode {
     background-color: rgb(100, 91, 106);
 }
+li {
+    list-style: none;
+}
