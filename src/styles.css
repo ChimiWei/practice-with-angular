@@ -1,11 +1,12 @@
-
 .normalMode {
-    background-color: rgb(222, 197, 235);
+    background-color: #e7c3f5;
 }
 
 .darkMode {
-    background-color: rgb(100, 91, 106);
+    background-color: #0f1020;
 }
+
+
 li {
     list-style: none;
 }

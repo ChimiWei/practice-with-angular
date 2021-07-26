@@ -1,4 +1,11 @@
- <app-header></app-header>
+ <div [ngClass]="changeMode ? 'darkMode' : 'normalMode'">
+ <app-header (changeMode)="setModeState($event)"></app-header>
+
+ <div class="container">
+    <h2 class="lead display-5  mb-4">
+      Trabalho
+    </h2>
+ </div>
 
 
   <app-lista-tarefas periodo="Manhã" class="theme-manha"  ></app-lista-tarefas>
@@ -10,3 +17,4 @@
   <app-lista-tarefas periodo="Noite" class="theme-noite"  ></app-lista-tarefas>
 
 <router-outlet></router-outlet>
+</div>

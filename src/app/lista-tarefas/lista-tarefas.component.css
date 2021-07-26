@@ -1,19 +1,32 @@
 
 
-:host-context(.theme-manha) #homework {
+:host-context(.theme-manha) .homework {
     border: 2px solid #cacc3d!important;
     border-radius: 24px;
     
 }
 
-:host-context(.theme-tarde) #homework {
+:host-context(.theme-tarde) .homework {
     border: 2px solid #f8c16f!important;
     border-radius: 24px;
 }
 
-:host-context(.theme-noite) #homework {
+:host-context(.theme-noite) .homework {
     border: 2px solid #b795d8!important;
     border-radius: 24px;
+}
+
+.tarefa-new {
+    border: 3px solid rgba(143, 54, 54, 0);
+    background-color: rgba(232, 192, 255, 0.542);
+    border-radius: 65px;
+    padding: 5px 18px; 
+    margin: 8px 0px;
+    max-width: 400px;
+}
+
+a:hover {
+    cursor: pointer;
 }
 
 

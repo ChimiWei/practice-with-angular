@@ -3,7 +3,7 @@
     border: 1px solid rgba(143, 54, 54, 0.09);
     border-radius: 65px; 
     padding: 18px 18px; 
-    margin: 5px;
+    margin: 5px 0px;
     max-width: 1000px;
 }
 
@@ -12,7 +12,7 @@
     background-color: rgb(216, 157, 250);
     border-radius: 65px;
     padding: 11px 18px; 
-    margin: 7px;
+    margin: 7px 0px;
     max-width: 800px;
 }
 
@@ -21,11 +21,15 @@
     background-color: rgb(231, 190, 255);
     border-radius: 65px;
     padding: 5px 18px; 
-    margin: 8px;
+    margin: 8px 0px;
     max-width: 600px;
 }
 
 .lead {
     text-shadow:1px 1px 3px rgb(222, 102, 252);
     color: rgb(2, 0, 2);
+}
+
+li {
+    list-style: none;
 }
