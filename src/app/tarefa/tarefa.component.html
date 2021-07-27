@@ -1,3 +1,5 @@
-<li  [ngClass]="{'tarefa-1': t.prioridadeNivel === 1,'tarefa-2': t.prioridadeNivel === 2, 'tarefa-3': t.prioridadeNivel === 3}">
-    <span class="lead"  >   {{t.tarefa}} </span> <button> add </button> <button> Ex</button>
+<li class="shadow-sm" [ngClass]="{'tarefa-1': t.prioridadeNivel === 1,'tarefa-2': t.prioridadeNivel === 2, 'tarefa-3': t.prioridadeNivel === 3}">
+    <span class="lead"  >   {{t.tarefa}} </span> 
+    <button > edit </button> 
+    <button class="delButton" > delete </button>
  </li>

@@ -1,13 +1,15 @@
 <section>
 
-<div  class="container shadow bg-body mb-3 p-3 homework"  > 
-<h2 class="display-6"> {{periodo}} </h2>
-<ul>
+<div  class="container shadow bg-body  mb-3 p-3 homework"  >
+<div class="row p-3"> 
+<h2 class="col-md-12 display-6 pb-2 "> {{periodo}} </h2>
+<ul class="col-md-12">
     <app-tarefa *ngFor="let t of tarefas" [t]="t"> </app-tarefa>
    <li>
        <button class="tarefa-new lead "> Nova tarefa...</button>
-     </li> 
+   </li> 
+   
 </ul>
-
+</div>
 </div>
 </section>

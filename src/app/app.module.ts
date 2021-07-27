@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListaTarefasComponent } from './lista-tarefas/lista-tarefas.component';
 import { HeaderComponent } from './header/header.component';
 import { TarefaComponent } from './tarefa/tarefa.component';
+import { ListaTituloComponent } from './lista-titulo/lista-titulo.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { TarefaComponent } from './tarefa/tarefa.component';
     AppComponent,
     ListaTarefasComponent,
     HeaderComponent,
-    TarefaComponent
+    TarefaComponent,
+    ListaTituloComponent
   ],
   imports: [
     BrowserModule,

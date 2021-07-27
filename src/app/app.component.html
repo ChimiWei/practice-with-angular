@@ -1,11 +1,7 @@
  <div [ngClass]="changeMode ? 'darkMode' : 'normalMode'">
  <app-header (changeMode)="setModeState($event)"></app-header>
 
- <div class="container">
-    <h2 class="lead display-5  mb-4">
-      Trabalho
-    </h2>
- </div>
+<app-lista-titulo [changetxtColor]="changeMode"> </app-lista-titulo>
 
 
   <app-lista-tarefas periodo="Manhã" class="theme-manha"  ></app-lista-tarefas>
