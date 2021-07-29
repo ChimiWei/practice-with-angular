@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from '../shared/data.service';
+import { Todo } from '../shared/todo.model';
 
 @Component({
   selector: 'app-lista-tarefas',
@@ -7,9 +9,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListaTarefasComponent implements OnInit {
 
-  @Input() periodo: string;
-  
+  @Input() periodo: string | undefined;
 
+  tarefas: Todo[] | undefined
+  
+/* Without data service
   tarefas = [
     { id: 1, prioridadeNivel: 1, tarefa: "Depositar no banco doc", periodo:"manha"},
     { id: 2, prioridadeNivel: 2, tarefa: "Arrumar o quarto", periodo: "tarde" },
@@ -19,18 +23,19 @@ export class ListaTarefasComponent implements OnInit {
     
     
   ]
- 
+ */
 
  
  
 
-  constructor() {
-    this.periodo = "";
+  constructor(private dataService: DataService) {
+  
    
    
   }
 
   ngOnInit(): void {
+    this.tarefas = this.dataService.getAllTodos()
   }
 
 }

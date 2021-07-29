@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {NgbAccordion, NgbAccordionModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaTarefasComponent } from './lista-tarefas/lista-tarefas.component';
@@ -19,8 +19,10 @@ import { ListaTituloComponent } from './lista-titulo/lista-titulo.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbAccordionModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

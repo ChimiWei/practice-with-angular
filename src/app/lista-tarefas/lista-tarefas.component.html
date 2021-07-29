@@ -2,13 +2,26 @@
 
 <div  class="container shadow bg-body  mb-3 p-3 homework"  >
 <div class="row p-3"> 
-<h2 class="col-md-12 display-6 pb-2 "> {{periodo}} </h2>
-<ul class="col-md-12">
+<h2 class=" display-6 pb-2 "> {{periodo}} </h2>
+<ul>
     <app-tarefa *ngFor="let t of tarefas" [t]="t"> </app-tarefa>
    <li>
-       <button class="tarefa-new lead "> Nova tarefa...</button>
-   </li> 
-   
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel class="tarefa-new" title="Nova Tarefa...">
+          <ng-template ngbPanelContent>
+            <form> 
+              <div> 
+                <input class="input" type="text" placeholder="Adicionar tarefa..." > 
+                <a>
+                  Adicionar
+                </a>
+              </div>
+
+            </form>
+          </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+   </li>
 </ul>
 </div>
 </div>

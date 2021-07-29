@@ -25,6 +25,45 @@
     max-width: 400px;
 }
 
+ngb-accordion::ng-deep.card::ng-deep * {  
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 2px 5px;
+    font-size: 1rem;
+    border-radius: 0;
+
+}
+
+ngb-accordion::ng-deep.card::ng-deep div {
+    border: 0px;
+}
+
+ngb-accordion::ng-deep.card::ng-deep {
+    border: 0ch;
+}
+
+ngb-accordion::ng-deep.card::ng-deep button:focus {
+   
+    box-shadow: 0 0 0 0.25rem rgba(92, 83, 91, 0.159);
+}
+
+
+ngb-accordion::ng-deep.card::ng-deep button {
+    border: 3px solid rgba(143, 54, 54, 0);
+    background-color: rgba(232, 192, 255, 0.542);
+    border-radius: 65px;
+    padding: 5px 18px; 
+    margin: 8px 0px;
+    max-width: 400px
+}
+
+.input {
+    border: 1px solid black;
+}
+   
+
 a:hover {
     cursor: pointer;
 }
