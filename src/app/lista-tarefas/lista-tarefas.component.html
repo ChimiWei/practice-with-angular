@@ -6,15 +6,25 @@
 <ul>
     <app-tarefa *ngFor="let t of tarefas" [t]="t"> </app-tarefa>
    <li>
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-        <ngb-panel class="tarefa-new" title="Nova Tarefa...">
+    <ngb-accordion #acc="ngbAccordion" >
+        <ngb-panel  title="Nova Tarefa...">
           <ng-template ngbPanelContent>
-            <form> 
+            <form #form="ngForm" (ngSubmit)="OnFormsSubmit(form)" id="novaTarefa"> 
               <div> 
-                <input class="input" type="text" placeholder="Adicionar tarefa..." > 
-                <a>
-                  Adicionar
-                </a>
+                <input ngModel name="text" style="width: 325px;" class="input" type="text" placeholder="Adicionar tarefa..." > 
+                <select ngModel name="prioridadeNivel" style="margin-left: 10px;"  form="novaTarefa">
+                  <option value="1"> Urgente </option>
+                  <option value="2"> Mediana</option>
+                  <option value="3"> Leve </option>
+                </select>
+                <select ngModel name="periodo" style="margin-left: 10px;" form="novaTarefa">
+                  <option value="Manhã"> Manhã </option>
+                  <option value="Tarde"> Tarde </option>
+                  <option value="Noite"> Noite </option>
+                </select>
+                <button style="margin-left: 10px;">
+                  adicionar
+                </button>
               </div>
 
             </form>

@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { DataService } from '../shared/data.service';
 import { Todo } from '../shared/todo.model';
+
 
 @Component({
   selector: 'app-lista-tarefas',
@@ -25,11 +27,18 @@ export class ListaTarefasComponent implements OnInit {
   ]
  */
 
- 
+ OnFormsSubmit(form: NgForm) {
+   console.log('Forms Submited!')
+   console.log(form)
+   this.dataService.addTodo(new Todo(form.value.text, form.value.periodo, form.value.prioridadeNivel) )
+   console.log(this.dataService.todos)
+   this.ref.detectChanges()
+   
+ }
  
 
-  constructor(private dataService: DataService) {
-  
+  constructor(private dataService: DataService, private ref: ChangeDetectorRef) {
+ 
    
    
   }

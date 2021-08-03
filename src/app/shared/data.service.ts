@@ -9,6 +9,7 @@ export class DataService {
   todos: Todo[] = [
     new Todo('Depositar no Banco Doc', 'Manhã', 1),
     new Todo('Arrumar a mesa','Manhã', 2),
+    new Todo('teste', 'Manhã', 2)
 
   ];
 
