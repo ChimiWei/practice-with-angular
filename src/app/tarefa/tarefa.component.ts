@@ -7,38 +7,43 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./tarefa.component.css']
 })
 export class TarefaComponent implements OnInit {
-   @Input() t: any;
+  @Input() t: any;
+  @Input() i: any;
+
+
   tarefaEstilo: string;
-  ngDoCheck() {
-    // ...
-  }
+
+  
   setClass() {
-    if(this.t.prioridadeNivel === 1) {
+    if (this.t.prioridadeNivel === 1) {
       this.tarefaEstilo = "tarefa-1"
     }
-    if(this.t.prioridadeNivel === 2) {
+    if (this.t.prioridadeNivel === 2) {
       this.tarefaEstilo = "tarefa-2"
     }
-    if(this.t.prioridadeNivel === 3) {
+    if (this.t.prioridadeNivel === 3) {
       this.tarefaEstilo = "tarefa-3"
     }
+
     
     
-    return this.tarefaEstilo
+
+  }
+
+  consoleLog() {
+    console.log(this.tarefaEstilo)
   }
 
 
-teste() {
-  this.ref.detectChanges()
-}
 
-  constructor(private ref: ChangeDetectorRef) { 
-    this.tarefaEstilo = ""
-    
-    
+  constructor(private ref: ChangeDetectorRef) {
+    this.tarefaEstilo = "tarefa-2"
+
+
   }
 
   ngOnInit(): void {
+    this.setClass()
   }
 
 }
