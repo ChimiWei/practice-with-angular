@@ -11,7 +11,7 @@ import { Todo } from '../shared/todo.model';
 })
 export class ListaTarefasComponent implements OnInit {
 
-  @Input() periodo: string | undefined;
+  @Input() periodo: string | undefined
 
   tarefas: Todo[] | undefined
   
@@ -32,7 +32,7 @@ export class ListaTarefasComponent implements OnInit {
    console.log(form)
    this.dataService.addTodo(new Todo(form.value.text, form.value.periodo, form.value.prioridadeNivel) )
    console.log(this.dataService.todos)
-   this.ref.detectChanges()
+   this.ref.detectChanges();
    
  }
  

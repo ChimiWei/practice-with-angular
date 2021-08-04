@@ -1,5 +1,5 @@
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tarefa',
@@ -8,8 +8,35 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TarefaComponent implements OnInit {
    @Input() t: any;
-  
-  constructor() { }
+  tarefaEstilo: string;
+  ngDoCheck() {
+    // ...
+  }
+  setClass() {
+    if(this.t.prioridadeNivel === 1) {
+      this.tarefaEstilo = "tarefa-1"
+    }
+    if(this.t.prioridadeNivel === 2) {
+      this.tarefaEstilo = "tarefa-2"
+    }
+    if(this.t.prioridadeNivel === 3) {
+      this.tarefaEstilo = "tarefa-3"
+    }
+    
+    
+    return this.tarefaEstilo
+  }
+
+
+teste() {
+  this.ref.detectChanges()
+}
+
+  constructor(private ref: ChangeDetectorRef) { 
+    this.tarefaEstilo = ""
+    
+    
+  }
 
   ngOnInit(): void {
   }
