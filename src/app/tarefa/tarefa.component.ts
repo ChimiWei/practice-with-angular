@@ -1,5 +1,4 @@
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-tarefa',
@@ -9,6 +8,7 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 export class TarefaComponent implements OnInit {
   @Input() t: any;
   @Input() i: any;
+  @Output() tarefaClick: EventEmitter<void> = new EventEmitter
 
 
   tarefaEstilo: string;
@@ -36,7 +36,7 @@ export class TarefaComponent implements OnInit {
 
 
 
-  constructor(private ref: ChangeDetectorRef) {
+  constructor() {
     this.tarefaEstilo = "tarefa-2"
 
 

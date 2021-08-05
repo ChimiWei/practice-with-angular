@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../shared/data.service';
@@ -13,12 +13,12 @@ import { Todo } from '../shared/todo.model';
 export class ListaTarefasComponent implements OnInit {
   @ViewChild('acc') accordionComponent!: NgbAccordion;
   @Input() periodo!: string;
-  @Input() painelId: string;
+  @Input() painelId!: string; 
 
   tarefas: Todo[] | undefined;
   
-  validationErrors: boolean;
-  painelToggle: boolean;
+  validationErrors: boolean = false;
+  painelToggle: boolean = false;
 
   
 
@@ -33,6 +33,16 @@ export class ListaTarefasComponent implements OnInit {
       
     ]
    */
+
+  
+
+  constructor(private dataService: DataService) {
+
+  }
+
+  ngOnInit(): void {
+    this.tarefas = this.dataService.getAllTodos()
+  }
 
   OnFormsSubmit(form: NgForm) {
    
@@ -61,19 +71,5 @@ export class ListaTarefasComponent implements OnInit {
     }
   
 
-
-  constructor(private dataService: DataService, private ref: ChangeDetectorRef) {
-    this.painelId = "";
-    this.painelToggle = false;
-    this.validationErrors = false;
-   
-
-
-
-  }
-
-  ngOnInit(): void {
-    this.tarefas = this.dataService.getAllTodos()
-  }
 
 }
