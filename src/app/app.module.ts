@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { TarefaComponent } from './tarefa/tarefa.component';
 import { ListaTituloComponent } from './lista-titulo/lista-titulo.component';
 import { FormsModule } from '@angular/forms';
+import { BotaoAddComponent } from './botao-add/botao-add.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     ListaTarefasComponent,
     HeaderComponent,
     TarefaComponent,
-    ListaTituloComponent
+    ListaTituloComponent,
+    BotaoAddComponent
   ],
   imports: [
     BrowserModule,

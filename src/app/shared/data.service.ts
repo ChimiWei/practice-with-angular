@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo.model';
+import { Tarefa } from './tarefa.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  todos: Todo[] = [
-    new Todo('Depositar no Banco Doc', 'Manhã', 1),
-    new Todo('Arrumar a mesa','Manhã', 2),
-    new Todo('teste', 'Manhã', 2)
+  tarefas: Tarefa[] = [
+    new Tarefa('Depositar no Banco Doc', 'Manhã', 1),
+    new Tarefa('Arrumar a mesa','Manhã', 2),
+    new Tarefa('teste', 'Manhã', 2)
 
   ];
 
@@ -17,18 +17,18 @@ export class DataService {
 
   constructor() { }
 
-  getAllTodos(){
-    return this.todos
+  getAllTarefas(){
+    return this.tarefas
   }
 
-  addTodo(todo: Todo) {
-    this.todos.push(todo)
+  addTarefa(tarefa: Tarefa) {
+    this.tarefas.push(tarefa)
   }
 
-  updateTodo(index: number, updatedTodo: Todo) {
-    this.todos[index] = updatedTodo
+  updateTarefa(index: number, updatedTodo: Tarefa) {
+    this.tarefas[index] = updatedTodo
   }
-  deleteTodo(index: number) {
-    this.todos.splice(index, 1)
+  deleteTarefa(index: number) {
+    this.tarefas.splice(index, 1)
   }
 }

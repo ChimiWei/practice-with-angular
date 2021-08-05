@@ -7,13 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListaTituloComponent implements OnInit {
 
-  @Input() changetxtColor = false;
+  @Input() changetxtColor = false;  //Recebe o Emit do modo Noturno
   
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  
+
 
 }

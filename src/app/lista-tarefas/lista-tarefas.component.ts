@@ -1,8 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from '../shared/data.service';
-import { Todo } from '../shared/todo.model';
+import { Tarefa } from '../shared/tarefa.model';
 
 
 @Component({
@@ -11,14 +9,12 @@ import { Todo } from '../shared/todo.model';
   styleUrls: ['./lista-tarefas.component.css']
 })
 export class ListaTarefasComponent implements OnInit {
-  @ViewChild('acc') accordionComponent!: NgbAccordion;
   @Input() periodo!: string;
-  @Input() painelId!: string; 
-
-  tarefas: Todo[] | undefined;
   
-  validationErrors: boolean = false;
-  painelToggle: boolean = false;
+
+  tarefas: Tarefa[] | undefined;
+  
+  
 
   
 
@@ -41,35 +37,10 @@ export class ListaTarefasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.tarefas = this.dataService.getAllTodos()
+    this.tarefas = this.dataService.getAllTarefas()
   }
 
-  OnFormsSubmit(form: NgForm) {
-   
-
-    console.log('Forms Submited!')
-    console.log(form)
-    if (form.invalid) { 
-      this.validationErrors = true
-      
-      return
-    }
-    this.dataService.addTodo(new Todo(form.value.text, form.value.periodo, form.value.prioridadeNivel))
-    console.log(this.dataService.todos)
-    this.toggle(this.painelId)
-    this.validationErrors = false
-    form.reset()
-    
-  
-
-
-  }
-
-  toggle(id:string): void {
-    //Here you have access to AccordionComponent as discribe on documentation.   
-    this.accordionComponent.toggle(id);
-    }
-  
+ 
 
 
 }
