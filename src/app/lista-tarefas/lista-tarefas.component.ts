@@ -12,7 +12,7 @@ export class ListaTarefasComponent implements OnInit {
   @Input() periodo!: string;
   @Input() painelId!: string;
 
-
+  setClass = false;
   tarefa!: Tarefa[]
   
   
@@ -44,7 +44,7 @@ export class ListaTarefasComponent implements OnInit {
 toggleCompleted(tarefa: Tarefa) {
   tarefa.completed = !tarefa.completed;
 }
- 
+
 
 
 }

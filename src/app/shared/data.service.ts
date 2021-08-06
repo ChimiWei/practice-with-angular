@@ -9,7 +9,7 @@ export class DataService {
   tarefa: Tarefa[] = [
     new Tarefa('Depositar no Banco Doc', 'Manhã', 1),
     new Tarefa('Arrumar a mesa','Manhã', 2),
-    new Tarefa('teste', 'Manhã', 2)
+    new Tarefa('teste', 'Manhã', 3)
 
   ];
 

@@ -25,17 +25,17 @@ export class TarefaComponent implements OnInit {
       this.tarefaEstilo = "tarefa-3"
     }
 
-    
-    
+  
 
   }
 
   consoleLog() {
-    console.log(this.t.completed)
+    console.log(this.t.prioridadeNivel)
   }
 
   onItemClick() {
     this.tarefaClicked.emit()
+    this.t.prioridadeNivel = 1
   }
 
 
