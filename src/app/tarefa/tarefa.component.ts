@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-tarefa',
   templateUrl: './tarefa.component.html',
-  styleUrls: ['./tarefa.component.css']
+  styleUrls: ['./tarefa.component.scss']
 })
 export class TarefaComponent implements OnInit {
   @Input() t: any;
@@ -31,7 +31,7 @@ export class TarefaComponent implements OnInit {
   }
 
   consoleLog() {
-    console.log(this.tarefaEstilo)
+    console.log(this.t.completed)
   }
 
   onItemClick() {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from '../shared/data.service';
 import { Tarefa } from '../shared/tarefa.model';
 
@@ -6,14 +6,14 @@ import { Tarefa } from '../shared/tarefa.model';
 @Component({
   selector: 'app-lista-tarefas',
   templateUrl: './lista-tarefas.component.html',
-  styleUrls: ['./lista-tarefas.component.css']
+  styleUrls: ['./lista-tarefas.component.scss']
 })
 export class ListaTarefasComponent implements OnInit {
   @Input() periodo!: string;
   @Input() painelId!: string;
-  
 
-  tarefas: Tarefa[] | undefined;
+
+  tarefa!: Tarefa[]
   
   
 
@@ -38,11 +38,11 @@ export class ListaTarefasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.tarefas = this.dataService.getAllTarefas()
+    this.tarefa = this.dataService.getAllTarefas()
   }
 
-onTarefaClicked() {
-  alert("A tarefa foi clicada")
+toggleCompleted(tarefa: Tarefa) {
+  tarefa.completed = !tarefa.completed;
 }
  
 

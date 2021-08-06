@@ -1,6 +1,6 @@
-<li id="{{i}}" class="shadow-sm {{tarefaEstilo}}" (click)="onItemClick()" >
+<li id="{{i}}" class="shadow-sm {{tarefaEstilo}}" [ngClass]="{'tarefa-completa': t.completed }" (click)="onItemClick()" >
     <span class="lead"  >   {{t.text}} </span> 
-    <button (click)="setClass()" (click)="consoleLog()"> edit </button> 
-    <button class="delButton" > delete </button>
+    <button (click)="$event.stopPropagation()" (click)="setClass()" (click)="consoleLog()"> edit </button> 
+    <button class="delButton" (click)="$event.stopPropagation()" > delete </button>
  </li>
  <!-- [ngClass]="{'tarefa-1': t.prioridadeNivel === 1,'tarefa-2': t.prioridadeNivel === 2, 'tarefa-3': t.prioridadeNivel === 3}"-->

@@ -6,7 +6,7 @@ import { Tarefa } from './tarefa.model';
 })
 export class DataService {
 
-  tarefas: Tarefa[] = [
+  tarefa: Tarefa[] = [
     new Tarefa('Depositar no Banco Doc', 'Manhã', 1),
     new Tarefa('Arrumar a mesa','Manhã', 2),
     new Tarefa('teste', 'Manhã', 2)
@@ -18,17 +18,17 @@ export class DataService {
   constructor() { }
 
   getAllTarefas(){
-    return this.tarefas
+    return this.tarefa
   }
 
   addTarefa(tarefa: Tarefa) {
-    this.tarefas.push(tarefa)
+    this.tarefa.push(tarefa)
   }
 
   updateTarefa(index: number, updatedTodo: Tarefa) {
-    this.tarefas[index] = updatedTodo
+    this.tarefa[index] = updatedTodo
   }
   deleteTarefa(index: number) {
-    this.tarefas.splice(index, 1)
+    this.tarefa.splice(index, 1)
   }
 }

@@ -8,7 +8,7 @@ import { Tarefa} from '../shared/tarefa.model';
 @Component({
   selector: 'app-botao-add',
   templateUrl: './botao-add.component.html',
-  styleUrls: ['./botao-add.component.css']
+  styleUrls: ['./botao-add.component.scss']
 })
 export class BotaoAddComponent implements OnInit {
   @ViewChild('acc') accordionComponent!: NgbAccordion;  //Buscar o painel na view para acessar funções do Bootstrap
@@ -33,7 +33,7 @@ export class BotaoAddComponent implements OnInit {
       return
     }
     this.dataService.addTarefa(new Tarefa(form.value.text, form.value.periodo, form.value.prioridadeNivel))
-    console.log(this.dataService.tarefas)
+    console.log(this.dataService.tarefa)
     this.toggle(this.painelId)
     this.validationErrors = false
     form.reset()
