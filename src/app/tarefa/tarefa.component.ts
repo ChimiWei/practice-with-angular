@@ -11,21 +11,16 @@ export class TarefaComponent implements OnInit {
   @Output() tarefaClicked: EventEmitter<void> = new EventEmitter
 
 
-  tarefaEstilo: string;
-
+  // tarefaEstilo: string;
+  tarefaUrgente!: boolean;
   
   setClass() {
     if (this.t.prioridadeNivel === 1) {
-      this.tarefaEstilo = "tarefa-1"
+      this.tarefaUrgente = true
     }
     if (this.t.prioridadeNivel === 2) {
-      this.tarefaEstilo = "tarefa-2"
+      this.tarefaUrgente = false
     }
-    if (this.t.prioridadeNivel === 3) {
-      this.tarefaEstilo = "tarefa-3"
-    }
-
-  
 
   }
 
@@ -41,8 +36,7 @@ export class TarefaComponent implements OnInit {
 
 
   constructor() {
-    this.tarefaEstilo = "tarefa-2"
-
+    
 
   }
 

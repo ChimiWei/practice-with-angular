@@ -5,11 +5,11 @@
         <form #form="ngForm" (ngSubmit)="OnFormsSubmit(form)" id="novaTarefa"> 
           <div> 
             <input ngModel #addTextField="ngModel" required name="text" style="width: 325px;" class="input" type="text" placeholder="Adicionar tarefa..." > 
-            <select ngModel #select1="ngModel"  required name="prioridadeNivel" style="margin-left: 10px;"  form="novaTarefa">
+            <select ngModel #select1="ngModel"  required name="urgente" style="margin-left: 10px;"  form="novaTarefa">
               <option value="" hidden> Prioridade </option>
-              <option value="1"> Urgente </option>
-              <option value="2"> Mediana</option>
-              <option value="3"> Leve </option>
+              <option [ngValue]="true"> Urgente </option>
+              <option [ngValue]="false"> Normal </option>
+             
             </select>
             <select ngModel #select2="ngModel" required name="periodo" style="margin-left: 10px;" form="novaTarefa">
               <option value="" hidden> Periodo </option>

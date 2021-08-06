@@ -7,9 +7,9 @@ import { Tarefa } from './tarefa.model';
 export class DataService {
 
   tarefa: Tarefa[] = [
-    new Tarefa('Depositar no Banco Doc', 'Manhã', 1),
-    new Tarefa('Arrumar a mesa','Manhã', 2),
-    new Tarefa('teste', 'Manhã', 3)
+    new Tarefa('Depositar no Banco Doc', 'Manhã', true),
+    new Tarefa('Arrumar a mesa','Manhã', false),
+    new Tarefa('teste', 'Manhã', false)
 
   ];
 

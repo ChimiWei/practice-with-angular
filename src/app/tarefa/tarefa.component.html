@@ -1,4 +1,4 @@
-<li id="{{i}}" class="shadow-sm {{tarefaEstilo}}" [class.completed]="t.completed" (click)="onItemClick()" >
+<li id="{{i}}" class="shadow-sm" [ngClass]="t.urgente ? 'tarefa-1' : 'tarefa-2' " [class.completed]="t.completed" (click)="onItemClick()" >
     <span class="lead"  >   {{t.text}} </span> 
     <button (click)="$event.stopPropagation()" (click)="setClass()" (click)="consoleLog()"> edit </button> 
     <button class="delButton" (click)="$event.stopPropagation()" > delete </button>
