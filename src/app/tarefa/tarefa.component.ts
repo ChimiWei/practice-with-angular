@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class TarefaComponent implements OnInit {
   @Input() t: any;
   @Input() i: any;
-  @Output() itemClick: EventEmitter<void> = new EventEmitter
+  @Output() tarefaClicked: EventEmitter<void> = new EventEmitter
 
 
   tarefaEstilo: string;
@@ -35,7 +35,7 @@ export class TarefaComponent implements OnInit {
   }
 
   onItemClick() {
-    this.itemClick.emit()
+    this.tarefaClicked.emit()
   }
 
 

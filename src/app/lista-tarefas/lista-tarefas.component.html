@@ -4,9 +4,9 @@
 <div class="row p-3"> 
 <h2 class=" display-6 pb-2 "> {{periodo}} </h2>
 <ul>
-    <app-tarefa *ngFor="let t of tarefas, let i = index" [i]="i" [t]="t"> </app-tarefa>
+    <app-tarefa *ngFor="let t of tarefas, let i = index" [i]="i" [t]="t" (tarefaClicked)="onTarefaClicked"> </app-tarefa>
 
-    <app-botao-add></app-botao-add> 
+    <app-botao-add [painelId]="painelId"></app-botao-add> 
    
 </ul>
 </div>

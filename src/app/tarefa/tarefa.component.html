@@ -1,4 +1,4 @@
-<li id="{{i}}" class="shadow-sm {{tarefaEstilo}}"  >
+<li id="{{i}}" class="shadow-sm {{tarefaEstilo}}" (click)="onItemClick()" >
     <span class="lead"  >   {{t.text}} </span> 
     <button (click)="setClass()" (click)="consoleLog()"> edit </button> 
     <button class="delButton" > delete </button>

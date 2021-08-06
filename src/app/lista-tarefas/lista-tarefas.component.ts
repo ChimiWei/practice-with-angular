@@ -10,6 +10,7 @@ import { Tarefa } from '../shared/tarefa.model';
 })
 export class ListaTarefasComponent implements OnInit {
   @Input() periodo!: string;
+  @Input() painelId!: string;
   
 
   tarefas: Tarefa[] | undefined;
@@ -40,6 +41,9 @@ export class ListaTarefasComponent implements OnInit {
     this.tarefas = this.dataService.getAllTarefas()
   }
 
+onTarefaClicked() {
+  alert("A tarefa foi clicada")
+}
  
 
 
