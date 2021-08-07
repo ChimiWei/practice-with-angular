@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditTarefaDialogComponent } from '../edit-tarefa-dialog/edit-tarefa-dialog.component';
 import { DataService } from '../shared/data.service';
 import { Tarefa } from '../shared/tarefa.model';
 
@@ -33,7 +35,7 @@ export class ListaTarefasComponent implements OnInit {
 
   
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private dialog: MatDialog) {
 
   }
 
@@ -45,6 +47,13 @@ toggleCompleted(tarefa: Tarefa) {
   tarefa.completed = !tarefa.completed;
 }
 
+editTarefa(tarefa: Tarefa) {
+  const index = this.tarefa.indexOf(tarefa)
+
+  let dialogRef = this.dialog.open(EditTarefaDialogComponent, {
+    width: '700px',
+  })
+}
 
 
 }

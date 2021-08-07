@@ -1,0 +1,46 @@
+<h1 class="title"> Editar Tarefa </h1>
+
+<div mat-dialog-content> 
+    <form  #form="ngForm" (ngSubmit)="OnFormSubmit(form)" id="novaTarefa" class="form-group"> 
+        <div> 
+            <input ngModel #addTextField="ngModel" required name="text" style="width: 325px;" class="input" type="text" placeholder="Adicionar tarefa..." > 
+            <select ngModel #select1="ngModel"  required name="urgente" style="margin-left: 10px;"  form="novaTarefa">
+              <option value="" hidden> Prioridade </option>
+              <option [ngValue]="true"> Urgente </option>
+              <option [ngValue]="false"> Normal </option>
+             
+            </select>
+            <select  ngModel #select2="ngModel" required name="periodo" style="margin-left: 10px;" form="novaTarefa" class="custom-select">
+              <option value="" hidden> Periodo </option>
+              <option value="Manhã"> Manhã </option>
+              <option value="Tarde"> Tarde </option>
+              <option value="Noite"> Noite </option>
+            </select>
+
+            <div class="d-flex flex-row-reverse pt-2 mt-3">
+            <button type="button" style="margin-left: 10px;" (click)="close()" class="btn btn-light">
+                Cancelar
+            </button>
+            <button type="submit" style="margin-left: 10px;" class="btn btn-success" >
+                Confirmar
+            </button>
+            </div>
+          </div>
+          <div *ngIf="addTextField.invalid && validationErrors">
+            
+            <p class="help text-danger" > Por favor, preencha todos os campos.</p>
+
+          </div>
+          <div *ngIf="addTextField.valid && validationErrors">
+            
+            <p class="help text-danger" *ngIf="select1.invalid" > Por favor, escolha a prioridade.</p>
+            
+          </div>
+          <div *ngIf="addTextField.valid && select1.valid && validationErrors">
+            
+            <p class="help text-danger" *ngIf="select2.invalid" > Por favor, escolha o período.</p>
+
+          </div>
+
+    </form>
+</div>

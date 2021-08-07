@@ -9,7 +9,9 @@ import { TarefaComponent } from './tarefa/tarefa.component';
 import { ListaTituloComponent } from './lista-titulo/lista-titulo.component';
 import { FormsModule } from '@angular/forms';
 import { BotaoAddComponent } from './botao-add/botao-add.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditTarefaDialogComponent } from './edit-tarefa-dialog/edit-tarefa-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,16 @@ import { BotaoAddComponent } from './botao-add/botao-add.component';
     HeaderComponent,
     TarefaComponent,
     ListaTituloComponent,
-    BotaoAddComponent
+    BotaoAddComponent,
+    EditTarefaDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbAccordionModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   
   providers: [],

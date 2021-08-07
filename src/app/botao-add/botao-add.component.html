@@ -2,16 +2,16 @@
   <ngb-accordion #acc="ngbAccordion" >
     <ngb-panel id="{{painelId}}" title="Nova Tarefa">
       <ng-template ngbPanelContent>
-        <form #form="ngForm" (ngSubmit)="OnFormsSubmit(form)" id="novaTarefa"> 
+        <form #form="ngForm" (ngSubmit)="OnFormsSubmit(form)" id="novaTarefa" class="form-group"> 
           <div> 
-            <input ngModel #addTextField="ngModel" required name="text" style="width: 325px;" class="input" type="text" placeholder="Adicionar tarefa..." > 
+            <input ngModel #addTextField="ngModel" required name="text" style="width: 325px;" type="text" placeholder="Adicionar tarefa..." > 
             <select ngModel #select1="ngModel"  required name="urgente" style="margin-left: 10px;"  form="novaTarefa">
               <option value="" hidden> Prioridade </option>
               <option [ngValue]="true"> Urgente </option>
               <option [ngValue]="false"> Normal </option>
              
             </select>
-            <select ngModel #select2="ngModel" required name="periodo" style="margin-left: 10px;" form="novaTarefa">
+            <select ngModel #select2="ngModel" required name="periodo" style="margin-left: 10px;" form="novaTarefa" >
               <option value="" hidden> Periodo </option>
               <option value="Manhã"> Manhã </option>
               <option value="Tarde"> Tarde </option>

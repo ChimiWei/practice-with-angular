@@ -9,11 +9,23 @@ export class TarefaComponent implements OnInit {
   @Input() t: any;
   @Input() i: any;
   @Output() tarefaClicked: EventEmitter<void> = new EventEmitter
+  @Output() editClicked: EventEmitter<void> = new EventEmitter
 
 
   // tarefaEstilo: string;
   tarefaUrgente!: boolean;
   
+ 
+
+  constructor() {
+    
+
+  }
+
+  ngOnInit(): void {
+    this.setClass()
+  }
+
   setClass() {
     if (this.t.prioridadeNivel === 1) {
       this.tarefaUrgente = true
@@ -24,8 +36,8 @@ export class TarefaComponent implements OnInit {
 
   }
 
-  consoleLog() {
-    console.log(this.t.prioridadeNivel)
+  onClickedEdit(){
+    this.editClicked.emit()
   }
 
   onItemClick() {
@@ -34,14 +46,5 @@ export class TarefaComponent implements OnInit {
   }
 
 
-
-  constructor() {
-    
-
-  }
-
-  ngOnInit(): void {
-    this.setClass()
-  }
 
 }
