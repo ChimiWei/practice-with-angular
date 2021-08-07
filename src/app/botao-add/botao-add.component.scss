@@ -7,6 +7,32 @@
     max-width: 400px;
 }
 
+.inputText {
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    &:focus {
+        border-color: #ffffff;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem #dcb5f0;
+    }
+}
+
+.select {
+    border: 1px solid #ced4da;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+    &:focus {
+        border-color: #ffffff;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem #dcb5f0;
+        
+    }
+}
+
+
 ngb-accordion::ng-deep.card::ng-deep * {  
     font-weight: 400;
     color: #000000;
@@ -18,11 +44,13 @@ ngb-accordion::ng-deep.card::ng-deep * {
 
 }
 
-ngb-accordion::ng-deep.card::ng-deep div {
+
+
+ngb-accordion::ng-deep.card::ng-deep {
     border: 0px;
 }
 
-ngb-accordion::ng-deep.card::ng-deep {
+ngb-accordion::ng-deep .card::ng-deep div::ng-deep {
     border: 0ch;
 }
 

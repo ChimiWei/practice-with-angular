@@ -1,28 +1,30 @@
-<h1 class="title"> Editar Tarefa </h1>
+<h1 class="title "> Editar  </h1>
 
-<div mat-dialog-content> 
+<div class="pt-2" mat-dialog-content> 
     <form  #form="ngForm" (ngSubmit)="OnFormSubmit(form)" id="novaTarefa" class="form-group"> 
         <div> 
-            <input ngModel #addTextField="ngModel" required name="text" style="width: 325px;" class="input" type="text" placeholder="Adicionar tarefa..." > 
-            <select ngModel #select1="ngModel"  required name="urgente" style="margin-left: 10px;"  form="novaTarefa">
+            <input class="inputText" ngModel #addTextField="ngModel" [ngModel]="tarefa.text" required name="text"  style="width: 325px;"  type="text" placeholder="Adicionar tarefa..." > 
+           
+            <select class="select" ngModel #select1="ngModel"  required name="urgente" style="margin-left: 10px;"  form="novaTarefa">
               <option value="" hidden> Prioridade </option>
               <option [ngValue]="true"> Urgente </option>
               <option [ngValue]="false"> Normal </option>
              
             </select>
-            <select  ngModel #select2="ngModel" required name="periodo" style="margin-left: 10px;" form="novaTarefa" class="custom-select">
+            <select class="select" ngModel #select2="ngModel" required name="periodo" style="margin-left: 10px;" form="novaTarefa" >
               <option value="" hidden> Periodo </option>
               <option value="Manhã"> Manhã </option>
               <option value="Tarde"> Tarde </option>
               <option value="Noite"> Noite </option>
             </select>
 
-            <div class="d-flex flex-row-reverse pt-2 mt-3">
-            <button type="button" style="margin-left: 10px;" (click)="close()" class="btn btn-light">
+            <div class="d-flex flex-row-reverse pt-2 pb-2 mt-3">
+            <button type="button" style="margin-left: 10px;" (click)="close()" class="btn btn-cancel">
                 Cancelar
             </button>
-            <button type="submit" style="margin-left: 10px;" class="btn btn-success" >
-                Confirmar
+            <button type="submit" style="margin-left: 10px;" class="btn btn-color"  >
+       
+              Salvar
             </button>
             </div>
           </div>

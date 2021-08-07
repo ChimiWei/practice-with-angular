@@ -4,21 +4,21 @@
       <ng-template ngbPanelContent>
         <form #form="ngForm" (ngSubmit)="OnFormsSubmit(form)" id="novaTarefa" class="form-group"> 
           <div> 
-            <input ngModel #addTextField="ngModel" required name="text" style="width: 325px;" type="text" placeholder="Adicionar tarefa..." > 
-            <select ngModel #select1="ngModel"  required name="urgente" style="margin-left: 10px;"  form="novaTarefa">
+            <input class="inputText" ngModel #addTextField="ngModel" required name="text" style="width: 325px;" type="text" placeholder="Adicionar tarefa..." > 
+            <select class="select" ngModel #select1="ngModel"  required name="urgente" style="margin-left: 10px;"  form="novaTarefa">
               <option value="" hidden> Prioridade </option>
               <option [ngValue]="true"> Urgente </option>
               <option [ngValue]="false"> Normal </option>
              
             </select>
-            <select ngModel #select2="ngModel" required name="periodo" style="margin-left: 10px;" form="novaTarefa" >
+            <select class="select" ngModel #select2="ngModel" required name="periodo" style="margin-left: 10px;" form="novaTarefa" >
               <option value="" hidden> Periodo </option>
               <option value="Manhã"> Manhã </option>
               <option value="Tarde"> Tarde </option>
               <option value="Noite"> Noite </option>
             </select>
             <button style="margin-left: 10px;" >
-              adicionar
+              Adicionar
             </button>
           </div>
           <div *ngIf="addTextField.invalid && validationErrors">

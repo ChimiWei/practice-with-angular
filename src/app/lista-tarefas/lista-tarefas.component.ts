@@ -52,6 +52,13 @@ editTarefa(tarefa: Tarefa) {
 
   let dialogRef = this.dialog.open(EditTarefaDialogComponent, {
     width: '700px',
+    data: tarefa
+  });
+
+  dialogRef.afterClosed().subscribe((result) => {
+    if(result) {
+      this.dataService.updateTarefa(index, result)
+    }
   })
 }
 
