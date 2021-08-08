@@ -23,18 +23,10 @@ export class TarefaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.setClass()
+    
   }
 
-  setClass() {
-    if (this.t.prioridadeNivel === 1) {
-      this.tarefaUrgente = true
-    }
-    if (this.t.prioridadeNivel === 2) {
-      this.tarefaUrgente = false
-    }
-
-  }
+  
 
   onClickedEdit(){
     this.editClicked.emit()
@@ -42,7 +34,7 @@ export class TarefaComponent implements OnInit {
 
   onItemClick() {
     this.tarefaClicked.emit()
-    this.t.prioridadeNivel = 1
+   
   }
 
 
