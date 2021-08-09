@@ -19,6 +19,11 @@ export class EditTarefaDialogComponent implements OnInit {
 
   OnFormSubmit(form: NgForm) {
 
+    if(form.invalid) {
+      this.validationErrors = true
+      return 
+    }
+
     const updatedTarefa = {
       ...this.tarefa,
       ...form.value

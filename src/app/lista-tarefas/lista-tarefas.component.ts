@@ -43,24 +43,34 @@ export class ListaTarefasComponent implements OnInit {
     this.tarefa = this.dataService.getAllTarefas()
   }
 
+// Change Todo's completed state 
 toggleCompleted(tarefa: Tarefa) {
   tarefa.completed = !tarefa.completed;
 }
-
+// Edit Todo
 editTarefa(tarefa: Tarefa) {
   const index = this.tarefa.indexOf(tarefa)
-
+  // Setting up dialog
   let dialogRef = this.dialog.open(EditTarefaDialogComponent, {
     width: '700px',
     data: tarefa
   });
 
+  // Get the push from the dialog
   dialogRef.afterClosed().subscribe((result) => {
     if(result) {
       this.dataService.updateTarefa(index, result)
     }
   })
+
 }
 
+deleteTarefa(tarefa: Tarefa) {
+  const index = this.tarefa.indexOf(tarefa)
+
+  this.dataService.deleteTarefa(index)
+
+  console.log('amigo estou aqui')
+}
 
 }

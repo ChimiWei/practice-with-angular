@@ -1,4 +1,6 @@
  .tarefa-1 {
+    display: flex;
+    flex-wrap: wrap;
     background-color: rgb(197, 110, 247);
     border: 1px solid rgba(143, 54, 54, 0.09);
     border-radius: 65px; 
@@ -6,14 +8,26 @@
     margin: 5px 0px;
     max-width: 1000px;
     transition: all 0.4s ease-in-out;
+
     &.completed {
         background-color: rgb(150, 150, 150);
-        text-decoration-line: line-through;
         transition: all 0.4s ease-in-out;
+        .lead {
+            text-decoration-line: line-through;
+        }
+        .editButton {
+            opacity: 0 !important;
+            transform: translateY(10px)
+            
+        }
     }
+
+   
  }
 
  .tarefa-2 {
+    display: flex;
+    flex-wrap: wrap;
     border: 3px solid rgba(143, 54, 54, 0.09);
     background-color: rgb(216, 157, 250);
     border-radius: 65px;
@@ -25,12 +39,21 @@
       
     &.completed {
         background-color: rgb(150, 150, 150);
-        text-decoration-line: line-through;
         transition: all 0.4s ease-in-out;
+        .lead {
+            text-decoration-line: line-through;
+        }
+        .editButton {
+            opacity: 0 !important;
+            transform: translateY(10px)
+            
+        }
     }
 }
 
  .tarefa-3 {
+    display: flex;
+    flex-wrap: wrap;
     border: 3px solid rgba(143, 54, 54, 0.09);
     background-color: rgb(231, 190, 255);
     border-radius: 65px;
@@ -43,38 +66,84 @@
     &.completed {
         transition: all 0.4s ease-in-out;
         background-color: rgb(150, 150, 150);
-        text-decoration-line: line-through;
+        .lead {
+            text-decoration-line: line-through;
+        }
+        .editButton {
+            opacity: 0 !important;
+            transform: translateY(10px)
+            
+        }
     }
 }
 
-.tarefa-1:hover{
-    margin: 5px 6px;
-    cursor: pointer;
-}
+
 
 .lead {
     text-shadow: 0px 0px  rgb(0, 0, 0);
     color: rgb(2, 0, 2);
 }
 
+.delButton {
+    border: none;
+    background: none;
+    margin-left: auto;
+    transition: all 0.3s ease-in-out;
+
+}
+.editButton {
+    border: none;
+    background: none;
+    padding-top: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
 @media screen and (min-width: 600px) {
-    .delButton {
-        position:relative;
-        float: right;
+    .editButton {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease-in-out;
     }
+
+    .delButton {
+        opacity: 0;
+    }
+
 
     .tarefa-1:hover{
         margin: 5px 6px;
         cursor: pointer;
+        .editButton {
+            opacity: 100;
+            transform: translateY(0);
+        }
+
+        .delButton {
+            opacity: 100;
+        }
     }
     .tarefa-2:hover{
         margin: 7px 6px;
         cursor: pointer;
+        .editButton {
+            opacity: 100;
+            transform: translateY(0);
+        }
+        .delButton {
+            opacity: 100;
+        }
     }
 
     .tarefa-3:hover{
         margin: 8px 6px;
         cursor: pointer;
+        .editButton {
+            opacity: 100;
+            transform: translateY(0);
+        }
+        .delButton {
+            opacity: 100;
+        }
     }
     
     

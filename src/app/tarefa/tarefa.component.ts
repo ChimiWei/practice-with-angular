@@ -10,6 +10,7 @@ export class TarefaComponent implements OnInit {
   @Input() i: any;
   @Output() tarefaClicked: EventEmitter<void> = new EventEmitter
   @Output() editClicked: EventEmitter<void> = new EventEmitter
+  @Output() deleteClicked: EventEmitter<void> = new EventEmitter
 
 
   // tarefaEstilo: string;
@@ -29,7 +30,14 @@ export class TarefaComponent implements OnInit {
   
 
   onClickedEdit(){
-    this.editClicked.emit()
+    if(!this.t.completed) {
+      this.editClicked.emit()
+    }
+    
+  }
+
+  onClickedDelete() {
+    this.deleteClicked.emit()
   }
 
   onItemClick() {

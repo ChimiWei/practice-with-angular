@@ -28,6 +28,7 @@ export class DataService {
   updateTarefa(index: number, updatedTodo: Tarefa) {
     this.tarefa[index] = updatedTodo
   }
+  
   deleteTarefa(index: number) {
     this.tarefa.splice(index, 1)
   }
