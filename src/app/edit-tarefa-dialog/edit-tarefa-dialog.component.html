@@ -3,7 +3,7 @@
 <div class="pt-2" mat-dialog-content> 
     <form  #form="ngForm" (ngSubmit)="OnFormSubmit(form)" id="novaTarefa" class="form-group"> 
         <div> 
-            <input class="inputText" ngModel #addTextField="ngModel" [ngModel]="tarefa.text" required name="text"  style="width: 325px;"  type="text" placeholder="Adicionar tarefa..." > 
+            <input class="inputText" ngModel #addTextField="ngModel" [ngModel]="tarefa.text" required name="text"    type="text" placeholder="Adicionar tarefa..." > 
            
             <select class="select" ngModel #select1="ngModel"  required name="urgente" style="margin-left: 10px;"  form="novaTarefa">
               <option value="" hidden> Prioridade </option>

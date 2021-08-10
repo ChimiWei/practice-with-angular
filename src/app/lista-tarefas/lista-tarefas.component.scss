@@ -1,7 +1,7 @@
 
 
 :host-context(.theme-manha) .homework {
-    border: 2px solid #cacc3d!important;
+    border: 2px solid rgba(214, 214, 35, 0.686);
     border-radius: 24px;
     
 }
@@ -28,7 +28,32 @@ a:hover {
     cursor: pointer;
 }
 
+.light_mode.material-icons {
+    color: rgb(237, 237, 93);
+    font-size: 34px;
+    margin-right: 6px;
+}
 
+.brightness_4.material-icons {
+    color: #fb8a00af;
+    font-size: 34px;
+    margin-right: 6px;
+}
+
+.dark_mode.material-icons {
+    color: #b795d8!important;
+    font-size: 34px;
+    margin-right: 6px;
+
+}
+
+
+
+i {
+    display: flex;
+    align-items: center;
+    
+}
 
 
 

@@ -3,7 +3,7 @@
     <ngb-panel id="{{painelId}}" title="Nova Tarefa">
       <ng-template ngbPanelContent>
         <form #form="ngForm" (ngSubmit)="OnFormsSubmit(form)" id="novaTarefa" class="form-group"> 
-          <div > 
+          <div class="painelAdd"> 
             <input class="inputText" ngModel #addTextField="ngModel" required name="text" type="text" placeholder="Adicionar tarefa..." > 
             <select class="select" ngModel #select1="ngModel"  required name="urgente" style="margin-left: 10px;"  form="novaTarefa">
               <option value="" hidden> Prioridade </option>

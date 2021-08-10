@@ -12,6 +12,7 @@ import { Tarefa } from '../shared/tarefa.model';
 })
 export class ListaTarefasComponent implements OnInit {
   @Input() periodo!: string;
+  @Input() icons!: string;
   @Input() painelId!: string;
 
   setClass = false;

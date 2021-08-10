@@ -1,12 +1,13 @@
  .tarefa-1 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     background-color: rgb(197, 110, 247);
     border: 1px solid rgba(143, 54, 54, 0.09);
     border-radius: 65px; 
     padding: 18px 18px; 
     margin: 5px 0px;
     max-width: 1000px;
+    height: fit-content;
     transition: all 0.4s ease-in-out;
 
     &.completed {
@@ -27,7 +28,7 @@
 
  .tarefa-2 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     border: 3px solid rgba(143, 54, 54, 0.09);
     background-color: rgb(216, 157, 250);
     border-radius: 65px;
@@ -53,7 +54,7 @@
 
  .tarefa-3 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     border: 3px solid rgba(143, 54, 54, 0.09);
     background-color: rgb(231, 190, 255);
     border-radius: 65px;
@@ -96,6 +97,7 @@
     background: none;
     padding-top: 2px;
     transition: all 0.3s ease-in-out;
+    font-size: 21px;
 }
 
 @media screen and (min-width: 600px) {
@@ -150,6 +152,55 @@
     
 }
 
+@media screen and (max-width: 550px) {
+    .tarefa-1 {
+      display:flow-root;
+      flex-wrap: nowrap;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto;
+    }
+
+    .tarefa-2 {
+        display:flow-root;
+        flex-wrap: nowrap;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+      }
+
+      .tarefa-3 {
+        display:flow-root;
+       flex-wrap: nowrap;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+      }
+
+      .delButton {
+        float: right;
+        transform: translateY(4px);
+
+    }
+
+    .editButton {
+        margin-left: -8px;
+        transform: translateY(4px);
+    }
+
+
+}
+
+
 .tarefa-completa {
     color: gray;
 }
@@ -158,7 +209,3 @@ li {
     list-style: none;
 }
 
-@keyframes mymove {
-    from {background-color: red;}
-    to {background-color: blue;}
-  }
