@@ -14,6 +14,7 @@ export class ListaTarefasComponent implements OnInit {
   @Input() periodo!: string;
   @Input() icons!: string;
   @Input() painelId!: string;
+  @Input() setDarkMode!: boolean;
 
   setClass = false;
   tarefa!: Tarefa[]

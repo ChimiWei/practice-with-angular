@@ -1,16 +1,16 @@
- <div [ngClass]="changeMode ? 'darkMode' : 'normalMode'">
+ <div [ngClass]="darkmodeState ? 'darkMode' : 'normalMode'">
  <app-header (changeMode)="setModeState($event)"></app-header>
 
-<app-lista-titulo [changetxtColor]="changeMode"> </app-lista-titulo>
+<app-lista-titulo [changetxtColor]="darkmodeState"> </app-lista-titulo>
 
 
-  <app-lista-tarefas painelId="painel-manha" periodo="Manhã" icons="light_mode" class="theme-manha"  ></app-lista-tarefas>
+  <app-lista-tarefas [setDarkMode]="darkmodeState" painelId="painel-manha" periodo="Manhã" icons="light_mode" class="theme-manha"  ></app-lista-tarefas>
 
 
-  <app-lista-tarefas painelId="painel-tarde" periodo="Tarde" icons="brightness_4" class="theme-tarde"  ></app-lista-tarefas>
+  <app-lista-tarefas [setDarkMode]="darkmodeState"  painelId="painel-tarde" periodo="Tarde" icons="brightness_4" class="theme-tarde"  ></app-lista-tarefas>
 
 
-  <app-lista-tarefas painelId="painel-noite" periodo="Noite" icons="dark_mode" class="theme-noite"  ></app-lista-tarefas>
+  <app-lista-tarefas [setDarkMode]="darkmodeState"  painelId="painel-noite" periodo="Noite" icons="dark_mode" class="theme-noite"  ></app-lista-tarefas>
 
 <router-outlet></router-outlet>
 </div>

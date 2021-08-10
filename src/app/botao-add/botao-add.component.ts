@@ -13,6 +13,7 @@ import { Tarefa} from '../shared/tarefa.model';
 export class BotaoAddComponent implements OnInit {
   @ViewChild('acc') accordionComponent!: NgbAccordion;  //Buscar o painel na view para acessar funções do Bootstrap
   @Input() painelId!: string;
+  @Input() addDarkMode!: boolean;
 
   validationErrors: boolean = false;
   painelToggle: boolean = false;

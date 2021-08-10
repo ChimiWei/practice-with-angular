@@ -40,11 +40,15 @@ ngb-accordion::ng-deep.card::ng-deep * {
     font-weight: 400;
     color: #000000;
     text-decoration: none;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
     padding: 2px 5px;
     font-size: 1rem;
     border-radius: 0;
 
+}
+ngb-accordion::ng-deep { 
+
+    background: transparent;
 }
 
 

@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todolily';
-  changeMode = false;
+  darkmodeState = false;
 
 
   setModeState(state: boolean) {
-    this.changeMode = state;
+    this.darkmodeState = state;
   }
 
   
