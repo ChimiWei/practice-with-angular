@@ -9,3 +9,11 @@ nav {
 .nav-link:hover {
     cursor: pointer;
 }
+
+.headernav {
+
+    @media (min-width: 600px) {
+        margin-right: auto;
+    }
+    
+}
