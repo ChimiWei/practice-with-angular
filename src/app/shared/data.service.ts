@@ -7,9 +7,9 @@ import { Tarefa } from './tarefa.model';
 export class DataService {
 
   tarefa: Tarefa[] = [
-    new Tarefa('Depositar no Banco Doc', 'Manhã', true),
-    new Tarefa('Arrumar a mesa','Manhã', false),
-    new Tarefa('teste', 'Manhã', false)
+    new Tarefa(1, 'Depositar no Banco Doc', 'Manhã', true),
+    new Tarefa(2, 'Arrumar a mesa','Tarde', false),
+    new Tarefa(3, 'teste', 'Noite', false)
 
   ];
 
@@ -30,6 +30,8 @@ export class DataService {
   }
   
   deleteTarefa(index: number) {
+    index--
     this.tarefa.splice(index, 1)
+    console.log(this.tarefa)
   }
 }

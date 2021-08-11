@@ -8,8 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'todolily';
   darkmodeState = false;
-
-
+  
   setModeState(state: boolean) {
     this.darkmodeState = state;
   }

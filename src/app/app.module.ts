@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {NgbAccordionModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,7 @@ import { BotaoAddComponent } from './botao-add/botao-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditTarefaDialogComponent } from './edit-tarefa-dialog/edit-tarefa-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CallbackPipe } from './shared/callback.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     TarefaComponent,
     ListaTituloComponent,
     BotaoAddComponent,
-    EditTarefaDialogComponent
+    EditTarefaDialogComponent,
+    CallbackPipe
   ],
   imports: [
     BrowserModule,

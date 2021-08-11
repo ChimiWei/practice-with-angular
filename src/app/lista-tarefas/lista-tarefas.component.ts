@@ -15,9 +15,23 @@ export class ListaTarefasComponent implements OnInit {
   @Input() icons!: string;
   @Input() painelId!: string;
   @Input() setDarkMode!: boolean;
-
+  
   setClass = false;
   tarefa!: Tarefa[]
+  tarefaFiltered!: Tarefa[] 
+ 
+
+
+
+  filterPeriodo(tarefa: Tarefa) {
+
+    if( tarefa.periodo === "") {
+      return true
+    } else {
+      return false
+    }
+  } 
+
   
   
 
@@ -38,11 +52,15 @@ export class ListaTarefasComponent implements OnInit {
   
 
   constructor(private dataService: DataService, private dialog: MatDialog) {
-
+    
+    
   }
 
   ngOnInit(): void {
     this.tarefa = this.dataService.getAllTarefas()
+    this.tarefaFiltered = this.tarefa.filter(t => t.periodo === this.periodo)
+    console.log(this.periodo)
+
   }
 
 // Change Todo's completed state 
@@ -51,6 +69,9 @@ toggleCompleted(tarefa: Tarefa) {
 }
 // Edit Todo
 editTarefa(tarefa: Tarefa) {
+  console.log(this.tarefaFiltered)
+  console.log(this.tarefa)
+  /*
   const index = this.tarefa.indexOf(tarefa)
   // Setting up dialog
   let dialogRef = this.dialog.open(EditTarefaDialogComponent, {
@@ -64,13 +85,14 @@ editTarefa(tarefa: Tarefa) {
       this.dataService.updateTarefa(index, result)
     }
   })
+  */
 
 }
 
 deleteTarefa(tarefa: Tarefa) {
-  const index = this.tarefa.indexOf(tarefa)
+  const id = tarefa.id
 
-  this.dataService.deleteTarefa(index)
+  this.dataService.deleteTarefa(id)
 
   console.log('amigo estou aqui')
 }
