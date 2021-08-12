@@ -6,18 +6,17 @@ import { Tarefa } from '../shared/tarefa.model';
 
 
 @Component({
-  selector: 'app-lista-tarefas',
-  templateUrl: './lista-tarefas.component.html',
-  styleUrls: ['./lista-tarefas.component.scss']
+  selector: 'app-lista-tarefas-tarde',
+  templateUrl: './lista-tarefas-tarde.component.html',
+  styleUrls: ['./lista-tarefas-tarde.component.scss']
 })
-export class ListaTarefasComponent implements OnInit {
+export class ListaTarefasTardeComponent implements OnInit {
   @Input() periodo!: string;
   @Input() icons!: string;
   @Input() painelId!: string;
   @Input() setDarkMode!: boolean;
 
   setClass = false;
-  teste!: "Manhã";
   tarefa!: Tarefa[]
   tarefaFiltered!: Tarefa[]
 
@@ -26,7 +25,7 @@ export class ListaTarefasComponent implements OnInit {
 
   filterPeriodo(tarefa: Tarefa) {
 
-    if (tarefa.periodo === "Manhã")  {
+    if (tarefa.periodo === "Tarde")  {
       return true
     } else {
       return false

@@ -4,6 +4,8 @@ import {NgbAccordionModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaTarefasComponent } from './lista-tarefas/lista-tarefas.component';
+import { ListaTarefasTardeComponent } from './lista-tarefas-2(tarde)/lista-tarefas-tarde.component';
+import { ListaTarefasNoiteComponent } from './lista-tarefas-3(noite)/lista-tarefas-noite.component';
 import { HeaderComponent } from './header/header.component';
 import { TarefaComponent } from './tarefa/tarefa.component';
 import { ListaTituloComponent } from './lista-titulo/lista-titulo.component';
@@ -18,6 +20,8 @@ import { CallbackPipe } from './shared/callback.pipe';
   declarations: [
     AppComponent,
     ListaTarefasComponent,
+    ListaTarefasTardeComponent,
+    ListaTarefasNoiteComponent,
     HeaderComponent,
     TarefaComponent,
     ListaTituloComponent,
