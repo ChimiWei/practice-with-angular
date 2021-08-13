@@ -34,7 +34,7 @@ export class BotaoAddComponent implements OnInit {
       
       return
     }
-    this.dataService.addTarefa(new Tarefa(4, form.value.text, form.value.periodo, form.value.urgente))
+    this.dataService.addTarefa(new Tarefa(this.dataService.tarefa.length, form.value.text, form.value.periodo, form.value.urgente))
     console.log(this.dataService.tarefa)
     this.toggle(this.painelId)
     this.validationErrors = false

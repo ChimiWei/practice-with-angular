@@ -96,7 +96,7 @@ export class ListaTarefasComponent implements OnInit {
 
     this.dataService.deleteTarefa(id)
 
-    console.log('amigo estou aqui')
+    console.log(tarefa.id)
   }
 
 }

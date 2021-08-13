@@ -29,9 +29,10 @@ export class DataService {
     this.tarefa[index] = updatedTodo
   }
   
-  deleteTarefa(index: number) {
-    index--
-    this.tarefa.splice(index, 1)
+  deleteTarefa(id: number) {
+
+    this.tarefa.splice(this.tarefa.findIndex(tarefa => tarefa.id === id), 1)
     console.log(this.tarefa)
+    
   }
 }

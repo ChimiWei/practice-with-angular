@@ -21,8 +21,7 @@ export class ListaTarefasNoiteComponent implements OnInit {
   tarefaFiltered!: Tarefa[]
 
 
-
-
+  
   filterPeriodo(tarefa: Tarefa) {
 
     if (tarefa.periodo === "Noite")  {
@@ -95,7 +94,7 @@ export class ListaTarefasNoiteComponent implements OnInit {
 
     this.dataService.deleteTarefa(id)
 
-    console.log('amigo estou aqui')
+    console.log(tarefa.id)
   }
 
 }
