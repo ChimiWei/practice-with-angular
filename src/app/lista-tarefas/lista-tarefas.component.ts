@@ -73,7 +73,7 @@ export class ListaTarefasComponent implements OnInit {
   editTarefa(tarefa: Tarefa) {
     console.log(this.tarefaFiltered)
     console.log(this.tarefa)
-    /*
+   
     const index = this.tarefa.indexOf(tarefa)
     // Setting up dialog
     let dialogRef = this.dialog.open(EditTarefaDialogComponent, {
@@ -87,7 +87,7 @@ export class ListaTarefasComponent implements OnInit {
         this.dataService.updateTarefa(index, result)
       }
     })
-    */
+   
 
   }
 
