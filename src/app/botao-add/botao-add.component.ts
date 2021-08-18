@@ -17,7 +17,7 @@ export class BotaoAddComponent implements OnInit {
 
   validationErrors: boolean = false;
   painelToggle: boolean = false;
-
+  
 
   constructor(private dataService: DataService) { }
 
