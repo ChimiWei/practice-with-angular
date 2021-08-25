@@ -8,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Output() changeMode: EventEmitter<boolean> = new EventEmitter(); //Emitter para o Modo Noturno
-  modoNoturno = false;
+  modoNoturno = true;
 
   emitChangeMode() {
     this.changeMode.emit(this.modoNoturno)

@@ -66,6 +66,8 @@ export class ListaTarefasNoiteComponent implements OnInit {
   // Change Todo's completed state 
   toggleCompleted(tarefa: Tarefa) {
     tarefa.completed = !tarefa.completed;
+    const index = this.tarefa.indexOf(tarefa)
+    this.dataService.updateTarefaCompleted(index, tarefa)
   }
   // Edit Todo
   editTarefa(tarefa: Tarefa) {
