@@ -19,6 +19,7 @@ export class ListaTarefasNoiteComponent implements OnInit {
   setClass = false;
   tarefa!: Tarefa[]
   tarefaFiltered!: Tarefa[]
+  erro: any
 
 
   
@@ -56,7 +57,7 @@ export class ListaTarefasNoiteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.tarefa = this.dataService.getAllTarefas()
+   // this.tarefa = this.dataService.getAllTarefas()
    // this.tarefaFiltered = this.tarefa.filter(t => t.periodo === this.periodo)
     console.log(this.periodo)
 
@@ -98,5 +99,14 @@ export class ListaTarefasNoiteComponent implements OnInit {
 
     console.log(tarefa.id)
   }
+  getTarefas() {
+    this.dataService.getAllTarefas().subscribe(
+      (data: Tarefa[]) => {
+        this.tarefa = data;
+      }, 
+      error => {
+        this.erro = error;
+      }); 
+     }
 
 }

@@ -40,15 +40,13 @@ export class BotaoAddComponent implements OnInit {
   OnFormsSubmit(form: NgForm) {
 
 
-    console.log('Forms Submited!')
-    console.log(form)
+    
     if (form.invalid) {
       this.validationErrors = true
 
       return
     }
     this.dataService.addTarefa(new Tarefa(this.getTodoId(), form.value.text, form.value.periodo, form.value.urgente))
-    console.log(this.dataService.tarefa)
     this.toggle(this.painelId)
     this.validationErrors = false
     form.reset()

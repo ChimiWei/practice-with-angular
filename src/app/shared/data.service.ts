@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Tarefa } from './tarefa.model';
 
 
@@ -17,20 +18,20 @@ export class DataService {
 
   constructor() { }
 
-  getAllTarefas() {
+  getAllTarefas(): Observable<Tarefa[]> {
     if(localStorage.getItem('todo')) {
      this.tarefa = JSON.parse(localStorage.getItem('todo')!) 
     }
 
     
-    return JSON.parse(localStorage.getItem('todo')!)
+    return of(JSON.parse(localStorage.getItem('todo')!)) 
   }
 
   addTarefa(tarefa: Tarefa) {
     JSON.parse(localStorage.getItem('todo')!) 
     this.tarefa.push(tarefa)
     localStorage.setItem('todo', JSON.stringify(this.tarefa)) 
-    window.location.reload()  
+   // window.location.reload()  
     
   }
 

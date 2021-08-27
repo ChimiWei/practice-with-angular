@@ -20,6 +20,7 @@ export class ListaTarefasComponent implements OnInit {
   teste!: "Manhã";
   tarefa!: Tarefa[]
   tarefaFiltered!: Tarefa[]
+  erro: any;
 
 
 
@@ -53,12 +54,12 @@ export class ListaTarefasComponent implements OnInit {
 
 
   constructor(private dataService: DataService, private dialog: MatDialog) {
-
+    
 
   }
 
   ngOnInit(): void {
-    this.tarefa = this.dataService.getAllTarefas()
+    this.getTarefas();
    // this.tarefaFiltered = this.tarefa.filter(t => t.periodo === this.periodo)
     console.log(this.periodo)
 
@@ -101,4 +102,19 @@ export class ListaTarefasComponent implements OnInit {
     console.log(tarefa.id)
   }
 
-}
+  getTarefas() {
+    this.dataService.getAllTarefas().subscribe(
+      (data: Tarefa[]) => {
+        this.tarefa = data;
+        console.log(data)
+        console.log(this.tarefa)
+        
+      }, 
+      error => {
+        this.erro = error;
+      }); 
+     }
+
+  }
+
+  
