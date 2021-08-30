@@ -54,12 +54,12 @@ export class ListaTarefasComponent implements OnInit {
 
 
   constructor(private dataService: DataService, private dialog: MatDialog) {
-    
+    this.getTarefas();
 
   }
 
   ngOnInit(): void {
-    this.getTarefas();
+    this.tarefa = this.dataService.tarefa
    // this.tarefaFiltered = this.tarefa.filter(t => t.periodo === this.periodo)
     console.log(this.periodo)
 

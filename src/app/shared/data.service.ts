@@ -38,14 +38,14 @@ export class DataService {
   updateTarefa(index: number, updatedTodo: Tarefa) {
     this.tarefa[index] = updatedTodo
     localStorage.setItem('todo', JSON.stringify(this.tarefa))
-    window.location.reload()    
+  //  window.location.reload()    
   }
   
   deleteTarefa(id: number) {
 
     this.tarefa.splice(this.tarefa.findIndex(tarefa => tarefa.id === id), 1)
     localStorage.setItem('todo', JSON.stringify(this.tarefa))
-    window.location.reload()
+   // window.location.reload()
     console.log(this.tarefa)
     
   }

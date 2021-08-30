@@ -97,9 +97,11 @@
 .editButton {
     border: none;
     background: none;
-    padding-top: 2px;
     transition: all 0.3s ease-in-out;
-    font-size: 21px;
+    font-size: 20px;
+    position: relative;
+   top: 2px;
+   left: -2px; 
 }
 
 @media screen and (min-width: 600px) {
