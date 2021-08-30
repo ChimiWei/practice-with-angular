@@ -1,6 +1,7 @@
  .tarefa-1 {
-    display: flex;
+    display: flow-root;
     flex-wrap: nowrap;
+    word-break: break-word;
     background-color: rgb(197, 110, 247);
     border: 1px solid rgba(143, 54, 54, 0.09);
     border-radius: 65px; 
@@ -27,8 +28,9 @@
  }
 
  .tarefa-2 {
-    display: flex;
+    display: flow-root;
     flex-wrap: nowrap;
+    word-break: break-word;
     border: 3px solid rgba(143, 54, 54, 0.09);
     background-color: rgb(216, 157, 250);
     border-radius: 65px;
@@ -88,7 +90,7 @@
 .delButton {
     border: none;
     background: none;
-    margin-left: auto;
+    float: right;
     transition: all 0.3s ease-in-out;
 
 }

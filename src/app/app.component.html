@@ -1,6 +1,7 @@
  <div [ngClass]="darkmodeState ? 'darkMode' : 'normalMode'">
  <app-header (changeMode)="setModeState($event)"></app-header>
 
+ <div class="resize"> 
 <app-lista-titulo [changetxtColor]="darkmodeState"> </app-lista-titulo>
 
 
@@ -10,6 +11,6 @@
 
 
   <app-lista-tarefas-noite [setDarkMode]="darkmodeState"  painelId="painel-noite" [periodo]="'Noite'" icons="dark_mode" class="theme-noite"  ></app-lista-tarefas-noite>
-
+</div>
 <router-outlet></router-outlet>
 </div>
