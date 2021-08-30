@@ -6,7 +6,8 @@ import { Tarefa } from './tarefa.model';
     pure: false
 })
 export class CallbackPipe implements PipeTransform {
-    transform(tarefa: Tarefa[], callback: (t: any) => boolean): any {
+    
+    transform(tarefa: Tarefa[], callback: (t: Tarefa) => boolean): Tarefa[] {
         if (!tarefa || !callback) {
             return tarefa;
         }
