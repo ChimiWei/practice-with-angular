@@ -52,7 +52,7 @@ export class ListaTarefasNoiteComponent implements OnInit {
 
 
   constructor(private dataService: DataService, private dialog: MatDialog) {
-    this.getTarefas()
+    this.dataService.getAllTarefas()
 
   }
 
@@ -99,6 +99,8 @@ export class ListaTarefasNoiteComponent implements OnInit {
 
     console.log(tarefa.id)
   }
+
+  /*
   getTarefas() {
     this.dataService.getAllTarefas().subscribe(
       (data: Tarefa[]) => {
@@ -108,5 +110,5 @@ export class ListaTarefasNoiteComponent implements OnInit {
         this.erro = error;
       }); 
      }
-
+*/
 }

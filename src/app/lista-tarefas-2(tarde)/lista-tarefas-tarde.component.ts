@@ -53,7 +53,7 @@ export class ListaTarefasTardeComponent implements OnInit {
 
 
   constructor(private dataService: DataService, private dialog: MatDialog) {
-    this.getTarefas()
+    this.dataService.getAllTarefas()
 
   }
 
@@ -61,6 +61,7 @@ export class ListaTarefasTardeComponent implements OnInit {
     this.tarefa = this.dataService.tarefa
    // this.tarefaFiltered = this.tarefa.filter(t => t.periodo === this.periodo)
     console.log(this.periodo)
+    
 
 
   }
@@ -100,6 +101,8 @@ export class ListaTarefasTardeComponent implements OnInit {
 
     console.log(tarefa.id)
   }
+
+  /*
   getTarefas() {
     this.dataService.getAllTarefas().subscribe(
       (data: Tarefa[]) => {
@@ -109,4 +112,5 @@ export class ListaTarefasTardeComponent implements OnInit {
         this.erro = error;
       }); 
      }
+     */
 }

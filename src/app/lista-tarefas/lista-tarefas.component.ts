@@ -54,7 +54,7 @@ export class ListaTarefasComponent implements OnInit {
 
 
   constructor(private dataService: DataService, private dialog: MatDialog) {
-    this.getTarefas();
+    this.dataService.getAllTarefas()
 
   }
 
@@ -65,6 +65,8 @@ export class ListaTarefasComponent implements OnInit {
 
 
   }
+
+ 
 
   // Change Todo's completed state 
   toggleCompleted(tarefa: Tarefa) {
@@ -101,7 +103,7 @@ export class ListaTarefasComponent implements OnInit {
 
     console.log(tarefa.id)
   }
-
+/*
   getTarefas() {
     this.dataService.getAllTarefas().subscribe(
       (data: Tarefa[]) => {
@@ -114,6 +116,8 @@ export class ListaTarefasComponent implements OnInit {
         this.erro = error;
       }); 
      }
+
+     */
 
   }
 
