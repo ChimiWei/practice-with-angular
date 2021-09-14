@@ -7,10 +7,10 @@ import { Tarefa } from './tarefa.model';
 })
 export class CallbackPipe implements PipeTransform {
     
-    transform(tarefa: Tarefa[], callback: (t: Tarefa) => boolean): Tarefa[] {
-        if (!tarefa || !callback) {
+    transform(tarefa: Tarefa[], callback: (t: Tarefa, periodo: string) => boolean, periodo: string): Tarefa[] {
+        if (!tarefa || !callback || !periodo ) {
             return tarefa;
         }
-        return tarefa.filter(t => callback(t));
+        return tarefa.filter(t => callback(t, periodo));
     }
 }

@@ -17,6 +17,17 @@
               <option value="Tarde"> Tarde </option>
               <option value="Noite"> Noite </option>
             </select>
+            <select class="select" ngModel #select2="ngModel" required name="dia" style="margin-left: 10px;" form="novaTarefa" >
+              <option value="" hidden> Periodo </option>
+              <option value="all"> Todos os dias </option>
+              <option value="seg"> Segunda </option>
+              <option value="ter"> Terça </option>
+              <option value="qua"> Quarta </option>
+              <option value="qui"> Quinta </option>
+              <option value="sex"> Sexta </option>
+              <option value="sab"> Sábado </option>
+              <option value="dom"> Domingo </option>
+            </select>
 
             <div class="d-flex flex-row-reverse pt-2 pb-2 mt-3">
             <button type="button" style="margin-left: 10px;" (click)="close()" class="btn btn-cancel">

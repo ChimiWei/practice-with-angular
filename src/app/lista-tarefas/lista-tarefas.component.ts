@@ -17,7 +17,7 @@ export class ListaTarefasComponent implements OnInit {
   @Input() setDarkMode!: boolean;
 
   setClass = false;
-  teste!: "Manhã";
+  teste = "Manhã";
   tarefa!: Tarefa[]
   tarefaFiltered!: Tarefa[]
   erro: any;
@@ -25,14 +25,7 @@ export class ListaTarefasComponent implements OnInit {
 
 
 
-  filterPeriodo(tarefa: Tarefa) {
-
-    if (tarefa.periodo === "Manhã")  {
-      return true
-    } else {
-      return false
-    }
-  }
+  
 
 
 
@@ -64,6 +57,18 @@ export class ListaTarefasComponent implements OnInit {
     console.log(this.periodo)
 
 
+  }
+
+  getPeriodo() {
+    return this.teste 
+  }
+
+  filterPeriodo(tarefa: Tarefa, periodo: string) {
+    if (tarefa.periodo === periodo)  {
+      return true
+    } else {
+      return false
+    }
   }
 
  

@@ -5,7 +5,7 @@
 <div class="d-flex pb-3" > <i class="material-icons" [class]="icons"> {{icons}} </i> <h2 class=" lead" [class.text-light]="setDarkMode">  {{periodo}} </h2> </div>
 <ul >
     
-    <app-tarefa *ngFor="let t of tarefa | callback: filterPeriodo , let i = index " [i]="i" [t]="t" (tarefaClicked)="toggleCompleted(t)" (editClicked)="editTarefa(t)" (deleteClicked)="deleteTarefa(t)"> </app-tarefa>
+    <app-tarefa *ngFor="let t of tarefa | callback: filterPeriodo : teste , let i = index " [i]="i" [t]="t" (tarefaClicked)="toggleCompleted(t)" (editClicked)="editTarefa(t)" (deleteClicked)="deleteTarefa(t)"> </app-tarefa>
 
     <app-botao-add [addDarkMode]="setDarkMode" [painelId]="painelId"></app-botao-add> 
    
