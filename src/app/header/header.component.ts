@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +11,26 @@ export class HeaderComponent implements OnInit {
   @Output() changeMode: EventEmitter<boolean> = new EventEmitter(); //Emitter para o Modo Noturno
   modoNoturno = true;
 
-  emitChangeMode() {
-    this.changeMode.emit(this.modoNoturno)
-  }
+  
 
-  constructor() { }
+  constructor(private dataService: DataService) {
+    
+   }
 
   ngOnInit(): void {
+    this.setMode();
+  }
+
+  emitChangeMode() {
+    this.changeMode.emit(this.modoNoturno)
+    this.dataService.setNightMode(this.modoNoturno)
+  }
+
+  setMode() {
+    console.log(this.modoNoturno)
+    this.modoNoturno = this.dataService.getNightMode()
+    this.emitChangeMode()
+
   }
 
 }

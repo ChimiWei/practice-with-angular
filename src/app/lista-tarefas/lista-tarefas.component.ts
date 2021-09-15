@@ -12,6 +12,7 @@ import { Tarefa } from '../shared/tarefa.model';
 })
 export class ListaTarefasComponent implements OnInit {
   @Input() periodo!: string;
+  @Input() showDay!: string;
   @Input() icons!: string;
   @Input() painelId!: string;
   @Input() setDarkMode!: boolean;
@@ -65,6 +66,14 @@ export class ListaTarefasComponent implements OnInit {
 
   filterPeriodo(tarefa: Tarefa, periodo: string) {
     if (tarefa.periodo === periodo)  {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  filterDay(tarefa: Tarefa, day: string) {
+    if (tarefa.dia === day || "all")  {
       return true
     } else {
       return false

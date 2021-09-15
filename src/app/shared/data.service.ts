@@ -14,7 +14,7 @@ export class DataService {
     new Tarefa(2, 'Arrumar a mesa','Tarde', false),
     new Tarefa(3, 'teste', 'Noite', false) */
  
-
+  modo!: boolean;
 
   constructor() { }
 
@@ -27,6 +27,18 @@ export class DataService {
     return of(JSON.parse(localStorage.getItem('todo')!)) 
   }
   */
+
+  getNightMode() {
+    if(localStorage.getItem('mode')) {
+      this.modo = JSON.parse(localStorage.getItem('mode')!)
+      return this.modo
+    }
+    return false
+  }
+
+  setNightMode(modoNoturno: boolean) {
+    localStorage.setItem('mode', JSON.stringify(modoNoturno))
+  }
 
   getAllTarefas() {
     if(localStorage.getItem('todo')) {
