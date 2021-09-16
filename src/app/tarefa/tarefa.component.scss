@@ -13,9 +13,8 @@
 
     &.completed {
         background-color: rgb(150, 150, 150);
-        c
+        transition: all 0.4s ease-in-out;
         .lead {
-            text-decoration-line: line-through;
             font-weight: 300;
 
         }
@@ -49,9 +48,6 @@
     &.completed {
         background-color: rgb(150, 150, 150);
         transition: all 0.4s ease-in-out;
-        .lead {
-            text-decoration-line: line-through;
-        }
         .editButton {
             opacity: 0 !important;
             transform: translateY(10px)
@@ -75,9 +71,6 @@
     &.completed {
         transition: all 0.4s ease-in-out;
         background-color: rgb(150, 150, 150);
-        .lead {
-            text-decoration-line: line-through;
-        }
         .editButton {
             opacity: 0 !important;
             transform: translateY(10px)
