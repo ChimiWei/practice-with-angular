@@ -3,14 +3,15 @@
       Lista
     </h2>
  </div>
- <div class="container"> 
-   <button class="btn btn-info m-2" (click)="emitSeg()"> Segunda </button>
-   <button class="btn btn-info m-2" (click)="emitTer()"> Terça </button>
-   <button class="btn btn-info m-2" (click)="emitQua()"> Quarta </button>
-   <button class="btn btn-info m-2" (click)="emitQui()"> Quinta </button>
-   <button class="btn btn-info m-2" (click)="emitSex()"> Sexta </button>
-   <button class="btn btn-info m-2" (click)="emitSab()"> Sábado </button>
-   <button class="btn btn-info m-2" (click)="emitDom()"> Domingo </button>
+ <div class="d-flex justify-content-center"> 
+   <button class="botao-dia m-2" [class.active]="showDay === 'seg'" (click)="emitSeg()" (click)="currentDay('seg')"> Seg </button>
+   <button class="botao-dia m-2" [class.active]="showDay === 'ter'" (click)="emitTer()" (click)="currentDay('ter')"> Ter </button>
+   <button class="botao-dia m-2" [class.active]="showDay === 'qua'" (click)="emitQua()" (click)="currentDay('qua')"> Qua </button>
+   <button class="botao-dia m-2" [class.active]="showDay === 'qui'" (click)="emitQui()" (click)="currentDay('qui')"> Qui </button>
+   <button class="botao-dia m-2" [class.active]="showDay === 'sex'" (click)="emitSex()" (click)="currentDay('sex')"> Sex </button>
+   <button class="botao-dia m-2" [class.active]="showDay === 'sab'" (click)="emitSab()" (click)="currentDay('sab')"> Sáb </button>
+   <button class="botao-dia m-2" [class.active]="showDay === 'dom'" (click)="emitDom()" (click)="currentDay('dom')"> Dom </button>
+   
    
  </div>
 

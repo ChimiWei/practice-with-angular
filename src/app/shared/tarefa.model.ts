@@ -6,7 +6,7 @@ export class Tarefa {  //Modelo da Array das tarefas
        public id: number, 
        public text: string,
        public periodo: string,
-       public dia: string = "all",
+       public dia: string,
        public urgente: boolean,
        public completed: boolean = false
 

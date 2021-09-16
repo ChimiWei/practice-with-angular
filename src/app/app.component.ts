@@ -8,13 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'todolily';
   darkmodeState = true;
-  day: string = "all"
+  day: string = "todas"
   
   setModeState(state: boolean) {
     this.darkmodeState = state;
   }
   setDayView(day: string) {
-    this.day = day; 
+    if(this.day === day) {
+      this.day = "todas"
+    } else {
+      this.day = day; 
+    }
+    
 
   }
 

@@ -16,6 +16,14 @@ export class ListaTituloComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  currentDay(day: string) {
+    if(this.showDay === day) {
+      this.showDay = "all"
+    } else {
+    this.showDay = day;
+    }
+  }
+
   emitSeg(){
    this.setDay.emit("seg")
   }

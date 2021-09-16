@@ -18,7 +18,7 @@ export class ListaTarefasComponent implements OnInit {
   @Input() setDarkMode!: boolean;
 
   setClass = false;
-  teste = "Manhã";
+  teste = "filterDay";
   tarefa!: Tarefa[]
   tarefaFiltered!: Tarefa[]
   erro: any;
@@ -73,11 +73,16 @@ export class ListaTarefasComponent implements OnInit {
   }
 
   filterDay(tarefa: Tarefa, day: string) {
-    if (tarefa.dia === day || "all")  {
+    if(day === "todas") {
       return true
     } else {
-      return false
+      if (tarefa.dia === day || tarefa.dia === "all" || tarefa.dia === null || tarefa.dia === undefined )  {
+        return true
+      } else {
+        return false
+      }
     }
+    
   }
 
  
@@ -87,6 +92,7 @@ export class ListaTarefasComponent implements OnInit {
     tarefa.completed = !tarefa.completed;
     const index = this.tarefa.indexOf(tarefa)
     this.dataService.updateTarefaCompleted(index, tarefa)
+    console.log(this.showDay)
   }
   // Edit Todo
   editTarefa(tarefa: Tarefa) {

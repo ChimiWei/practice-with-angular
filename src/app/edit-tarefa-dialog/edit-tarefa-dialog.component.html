@@ -17,8 +17,8 @@
               <option value="Tarde"> Tarde </option>
               <option value="Noite"> Noite </option>
             </select>
-            <select class="select" ngModel #select2="ngModel" required name="dia" style="margin-left: 10px;" form="novaTarefa" >
-              <option value="" hidden> Periodo </option>
+            <select class="select" ngModel #select3="ngModel" required name="dia" style="margin-left: 10px;" form="novaTarefa" >
+              <option value="" hidden> Dia da Semana </option>
               <option value="all"> Todos os dias </option>
               <option value="seg"> Segunda </option>
               <option value="ter"> Terça </option>
@@ -54,6 +54,12 @@
             <p class="help text-danger" *ngIf="select2.invalid" > Por favor, escolha o período.</p>
 
           </div>
+          <div *ngIf="addTextField.valid && select1.valid && select2.valid && validationErrors">
+            
+            <p class="help text-danger" *ngIf="select3.invalid" > Por favor, escolha o dia da semana.</p>
+
+          </div>
+
 
     </form>
 </div>
