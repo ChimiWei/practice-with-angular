@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditTarefaDialogComponent } from '../edit-tarefa-dialog/edit-tarefa-dialog.component';
 import { DataService } from '../shared/data.service';
 import { Tarefa } from '../shared/tarefa.model';
+import {DragDropModule, moveItemInArray} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -84,6 +85,32 @@ export class ListaTarefasComponent implements OnInit {
     }
     
   }
+
+  sortCompleted(a: Tarefa, b: Tarefa) {
+   if (a.completed === false){
+    return -1
+   } else { if (a.completed === true) {
+    return 1
+   } else {
+     return 0
+   }
+    
+   }
+  
+  } 
+
+  sortUrgente(a: Tarefa, b: Tarefa) {
+    if (a.urgente === false){
+     return -1
+    } else { if (a.urgente === true) {
+     return 1
+    } else {
+      return 0
+    }
+     
+    }
+   
+   } 
 
  
 

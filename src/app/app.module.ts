@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditTarefaDialogComponent } from './edit-tarefa-dialog/edit-tarefa-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CallbackPipe } from './shared/callback.pipe';
+import { SortPipe } from './shared/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CallbackPipe } from './shared/callback.pipe';
     ListaTituloComponent,
     BotaoAddComponent,
     EditTarefaDialogComponent,
-    CallbackPipe
+    CallbackPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,
