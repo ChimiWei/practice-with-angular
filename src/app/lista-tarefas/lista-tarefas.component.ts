@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditTarefaDialogComponent } from '../edit-tarefa-dialog/edit-tarefa-dialog.component';
 import { DataService } from '../shared/data.service';
 import { Tarefa } from '../shared/tarefa.model';
-import {DragDropModule, moveItemInArray} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class ListaTarefasComponent implements OnInit {
   @Input() setDarkMode!: boolean;
 
   setClass = false;
-  teste = "filterDay";
+
   tarefa!: Tarefa[]
   tarefaFiltered!: Tarefa[]
   erro: any;
@@ -61,9 +61,7 @@ export class ListaTarefasComponent implements OnInit {
 
   }
 
-  getPeriodo() {
-    return this.teste 
-  }
+  
 
   filterPeriodo(tarefa: Tarefa, periodo: string) {
     if (tarefa.periodo === periodo)  {
@@ -150,6 +148,13 @@ export class ListaTarefasComponent implements OnInit {
 
     console.log(tarefa.id)
   }
+
+  drop(event: CdkDragDrop<Tarefa[]>) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+
+  }
+
+ 
 /*
   getTarefas() {
     this.dataService.getAllTarefas().subscribe(

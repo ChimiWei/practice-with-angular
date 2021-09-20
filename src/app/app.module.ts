@@ -16,6 +16,8 @@ import { EditTarefaDialogComponent } from './edit-tarefa-dialog/edit-tarefa-dial
 import { MatDialogModule } from '@angular/material/dialog';
 import { CallbackPipe } from './shared/callback.pipe';
 import { SortPipe } from './shared/sort.pipe';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { SortPipe } from './shared/sort.pipe';
     NgbAccordionModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    DragDropModule
   ],
   
   providers: [],
