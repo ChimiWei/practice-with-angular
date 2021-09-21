@@ -45,6 +45,9 @@ export class TarefaComponent implements OnInit {
    
   }
 
+  teste() {
+    console.log("teste")
+  }
 
 
 }

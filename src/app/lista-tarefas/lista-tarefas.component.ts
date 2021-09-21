@@ -56,7 +56,7 @@ export class ListaTarefasComponent implements OnInit {
   ngOnInit(): void {
     this.tarefa = this.dataService.tarefa
    // this.tarefaFiltered = this.tarefa.filter(t => t.periodo === this.periodo)
-    console.log(this.periodo)
+  
 
 
   }
@@ -117,7 +117,7 @@ export class ListaTarefasComponent implements OnInit {
     tarefa.completed = !tarefa.completed;
     const index = this.tarefa.indexOf(tarefa)
     this.dataService.updateTarefaCompleted(index, tarefa)
-    console.log(this.showDay)
+    
   }
   // Edit Todo
   editTarefa(tarefa: Tarefa) {
@@ -149,10 +149,17 @@ export class ListaTarefasComponent implements OnInit {
     console.log(tarefa.id)
   }
 
-  drop(event: CdkDragDrop<Tarefa[]>) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+  drop(event: Event) {
+      event.preventDefault();
+      console.log("testando familia")
 
   }
+  allowDrop(event: Event) {
+    event.preventDefault();
+
+
+}
+
 
  
 /*

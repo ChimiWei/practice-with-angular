@@ -1,9 +1,9 @@
 <section>
 
-<div  class="container shadow mb-3 p-3 list-title" [ngClass]="setDarkMode ? 'bg-dark' : 'bg-body'"  >
+<div  class="container shadow mb-3 p-3 list-title" [ngClass]="setDarkMode ? 'bg-dark' : 'bg-body'" (drop)="drop($event)" (dragover)="allowDrop($event)" >
 <div class="row p-3"> 
 <div class="d-flex pb-3" > <i class="material-icons" [class]="icons"> {{icons}} </i> <h2 class="lead" [class.text-light]="setDarkMode">  {{periodo}} </h2> </div>
-<ul  >
+<ul >
     
     <app-tarefa *ngFor="let t of tarefa | callback: filterPeriodo : periodo | callback: filterDay : showDay | sort: sortUrgente | sort: sortCompleted , let i = index " [i]="i" [t]="t" (tarefaClicked)="toggleCompleted(t)" (editClicked)="editTarefa(t)" (deleteClicked)="deleteTarefa(t)" > </app-tarefa>
 

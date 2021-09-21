@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
   }
 
   setMode() {
-    console.log(this.modoNoturno)
+  
     this.modoNoturno = this.dataService.getNightMode()
     this.emitChangeMode()
 
