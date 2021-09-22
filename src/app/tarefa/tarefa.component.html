@@ -1,4 +1,4 @@
-<li draggable="true" (dragstart)="teste()" id="{{i}}" class="shadow-sm" [ngClass]="t.urgente ? 'tarefa-1' : 'tarefa-2' " [class.completed]="t.completed" (click)="onItemClick()">
+<li draggable="true" (dragstart)="dragTarefa($event)" id="{{i}}" class="shadow-sm" [ngClass]="t.urgente ? 'tarefa-1' : 'tarefa-2' " [class.completed]="t.completed" (click)="onItemClick()">
     <span class="lead"  >   {{t.text}} </span> 
     <button  class="editButton material-icons"  (click)="$event.stopPropagation()"  (click)="onClickedEdit()"> edit </button> 
     <button class="delButton material-icons" (click)="$event.stopPropagation()" (click)="onClickedDelete()" > delete </button>

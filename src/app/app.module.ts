@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CallbackPipe } from './shared/callback.pipe';
 import { SortPipe } from './shared/sort.pipe';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { BotaoDiaComponent } from './botao-dia/botao-dia.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     BotaoAddComponent,
     EditTarefaDialogComponent,
     CallbackPipe,
-    SortPipe
+    SortPipe,
+    BotaoDiaComponent
   ],
   imports: [
     BrowserModule,

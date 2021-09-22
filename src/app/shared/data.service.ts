@@ -57,10 +57,9 @@ export class DataService {
     
   }
 
-  updateTarefa(index: number, updatedTodo: Tarefa) {
-    this.tarefa[index] = updatedTodo
+  updateTarefa(id: number, updatedTodo: Tarefa) {
+    this.tarefa[this.tarefa.findIndex(tarefa => tarefa.id === id)] = updatedTodo
     localStorage.setItem('todo', JSON.stringify(this.tarefa))
-  //  window.location.reload()    
   }
   
   deleteTarefa(id: number) {
@@ -72,9 +71,6 @@ export class DataService {
     
   }
 
-  updateTarefaCompleted(index: number, updatedTodo: Tarefa) {
-    this.tarefa[index] = updatedTodo
-    localStorage.setItem('todo', JSON.stringify(this.tarefa))
-    
-  }
+
+
 }

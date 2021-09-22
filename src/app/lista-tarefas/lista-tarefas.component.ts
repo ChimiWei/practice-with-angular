@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditTarefaDialogComponent } from '../edit-tarefa-dialog/edit-tarefa-dialog.component';
 import { DataService } from '../shared/data.service';
 import { Tarefa } from '../shared/tarefa.model';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
 
 
 @Component({
@@ -17,12 +17,13 @@ export class ListaTarefasComponent implements OnInit {
   @Input() icons!: string;
   @Input() painelId!: string;
   @Input() setDarkMode!: boolean;
+  
 
   setClass = false;
+  tarefa!: Tarefa[];
+  tarefaFiltered!: Tarefa[];
+  tarefaDragged!: Tarefa;
 
-  tarefa!: Tarefa[]
-  tarefaFiltered!: Tarefa[]
-  erro: any;
 
 
 
@@ -115,16 +116,15 @@ export class ListaTarefasComponent implements OnInit {
   // Change Todo's completed state 
   toggleCompleted(tarefa: Tarefa) {
     tarefa.completed = !tarefa.completed;
-    const index = this.tarefa.indexOf(tarefa)
-    this.dataService.updateTarefaCompleted(index, tarefa)
+    const id = tarefa.id
+    this.dataService.updateTarefa(id, tarefa)
     
   }
   // Edit Todo
   editTarefa(tarefa: Tarefa) {
-    console.log(this.tarefaFiltered)
-    console.log(this.tarefa)
+    
    
-    const index = this.tarefa.indexOf(tarefa)
+    const id = tarefa.id
     // Setting up dialog
     let dialogRef = this.dialog.open(EditTarefaDialogComponent, {
       width: '700px',
@@ -134,7 +134,7 @@ export class ListaTarefasComponent implements OnInit {
     // Get the push from the dialog
     dialogRef.afterClosed().subscribe((result) => {
       if(result) {
-        this.dataService.updateTarefa(index, result)
+        this.dataService.updateTarefa(id, result)
       }
     })
    
@@ -149,11 +149,22 @@ export class ListaTarefasComponent implements OnInit {
     console.log(tarefa.id)
   }
 
-  drop(event: Event) {
-      event.preventDefault();
-      console.log("testando familia")
+  updateTarefaPeriodo(tarefa: Tarefa) {
+    console.log(tarefa)
+    tarefa.periodo = this.periodo
+    const id = tarefa.id
+    this.dataService.updateTarefa(id, tarefa)
 
   }
+
+  drop(event: DragEvent) {
+      event.preventDefault();
+     const tarefa = JSON.parse(event.dataTransfer?.getData("tarefa")!)
+     this.tarefaDragged = tarefa
+     this.updateTarefaPeriodo(this.tarefaDragged)
+     
+ }
+
   allowDrop(event: Event) {
     event.preventDefault();
 

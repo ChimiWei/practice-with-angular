@@ -71,7 +71,7 @@ export class ListaTarefasTardeComponent implements OnInit {
   toggleCompleted(tarefa: Tarefa) {
     tarefa.completed = !tarefa.completed;
     const index = this.tarefa.indexOf(tarefa)
-    this.dataService.updateTarefaCompleted(index, tarefa)
+  
     
   }
   // Edit Todo

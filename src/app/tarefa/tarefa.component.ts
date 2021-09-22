@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Tarefa } from '../shared/tarefa.model';
 
 @Component({
   selector: 'app-tarefa',
@@ -6,11 +7,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./tarefa.component.scss']
 })
 export class TarefaComponent implements OnInit {
-  @Input() t: any;
+  @Input() t!: Tarefa;
   @Input() i: any;
   @Output() tarefaClicked: EventEmitter<void> = new EventEmitter
   @Output() editClicked: EventEmitter<void> = new EventEmitter
   @Output() deleteClicked: EventEmitter<void> = new EventEmitter
+  
+
 
 
   // tarefaEstilo: string;
@@ -45,8 +48,10 @@ export class TarefaComponent implements OnInit {
    
   }
 
-  teste() {
-    console.log("teste")
+  dragTarefa(ev: DragEvent) {
+   ev.dataTransfer?.setData("tarefa", JSON.stringify(this.t))
+   
+   
   }
 
 
